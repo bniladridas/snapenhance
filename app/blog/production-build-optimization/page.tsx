@@ -10,7 +10,7 @@ export default function ProductionBuildOptimizationPage() {
 
         <article className="prose prose-sm dark:prose-invert max-w-none">
           <p className="text-muted-foreground mb-4">
-            Published: April 20, 2025 | Author: SnapEnhance Team
+            Published: April 20, 2025 | Updated: April 25, 2025 | Author: SnapEnhance Team
           </p>
 
           <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
@@ -20,6 +20,7 @@ export default function ProductionBuildOptimizationPage() {
               <li>Common issues include large bundle sizes, slow initial load times, and rendering inconsistencies</li>
               <li>Proper image optimization is crucial for applications like SnapEnhance that handle visual content</li>
               <li>Environment variables and API keys need special handling in production builds</li>
+              <li>Robust API error handling is essential to prevent JSON parsing errors in production</li>
               <li>Vercel deployment offers specific optimization features that can be leveraged</li>
             </ul>
           </div>
@@ -27,13 +28,13 @@ export default function ProductionBuildOptimizationPage() {
           <h2 className="text-lg font-medium mt-8 mb-4">Understanding Production Build Challenges</h2>
 
           <p>
-            When deploying SnapEnhance to production, we encountered several optimization challenges that required careful 
-            troubleshooting. In this guide, we'll share our experiences and solutions to help you optimize your own Next.js 
+            When deploying SnapEnhance to production, we encountered several optimization challenges that required careful
+            troubleshooting. In this guide, we'll share our experiences and solutions to help you optimize your own Next.js
             applications for production.
           </p>
 
           <p>
-            Production builds differ significantly from development builds in terms of performance requirements, error handling, 
+            Production builds differ significantly from development builds in terms of performance requirements, error handling,
             and optimization strategies. What works well in development might not translate to a smooth production experience.
           </p>
 
@@ -43,7 +44,7 @@ export default function ProductionBuildOptimizationPage() {
             <div className="bg-muted/30 p-4 rounded-md border border-border/30">
               <h3 className="text-sm font-medium mb-2">Large Bundle Sizes</h3>
               <p className="text-xs text-muted-foreground">
-                Production builds with excessive JavaScript can slow down initial page loads. This is especially problematic 
+                Production builds with excessive JavaScript can slow down initial page loads. This is especially problematic
                 for applications like SnapEnhance that need to be responsive and quick to load.
               </p>
             </div>
@@ -51,7 +52,7 @@ export default function ProductionBuildOptimizationPage() {
             <div className="bg-muted/30 p-4 rounded-md border border-border/30">
               <h3 className="text-sm font-medium mb-2">Image Optimization Issues</h3>
               <p className="text-xs text-muted-foreground">
-                Unoptimized images can significantly impact performance. For SnapEnhance, where image processing is central 
+                Unoptimized images can significantly impact performance. For SnapEnhance, where image processing is central
                 to the application, proper image optimization is crucial.
               </p>
             </div>
@@ -59,7 +60,7 @@ export default function ProductionBuildOptimizationPage() {
             <div className="bg-muted/30 p-4 rounded-md border border-border/30">
               <h3 className="text-sm font-medium mb-2">Environment Variable Configuration</h3>
               <p className="text-xs text-muted-foreground">
-                Incorrect handling of environment variables, especially API keys like our Gemini API key, can lead to 
+                Incorrect handling of environment variables, especially API keys like our Gemini API key, can lead to
                 functionality not working in production.
               </p>
             </div>
@@ -67,7 +68,7 @@ export default function ProductionBuildOptimizationPage() {
             <div className="bg-muted/30 p-4 rounded-md border border-border/30">
               <h3 className="text-sm font-medium mb-2">Rendering Inconsistencies</h3>
               <p className="text-xs text-muted-foreground">
-                Differences between server-side rendering (SSR), static site generation (SSG), and client-side rendering can 
+                Differences between server-side rendering (SSR), static site generation (SSG), and client-side rendering can
                 cause unexpected behavior in production that wasn't present in development.
               </p>
             </div>
@@ -76,14 +77,14 @@ export default function ProductionBuildOptimizationPage() {
           <h2 className="text-lg font-medium mt-8 mb-4">Troubleshooting Bundle Size Issues</h2>
 
           <p>
-            Large JavaScript bundles can significantly slow down your application's initial load time. Here's how we addressed 
+            Large JavaScript bundles can significantly slow down your application's initial load time. Here's how we addressed
             this issue in SnapEnhance:
           </p>
 
           <h3 className="text-base font-medium mt-6 mb-2">1. Analyzing Bundle Size</h3>
 
           <p>
-            First, we needed to understand what was contributing to our bundle size. We used the built-in Next.js bundle 
+            First, we needed to understand what was contributing to our bundle size. We used the built-in Next.js bundle
             analyzer to get insights:
           </p>
 
@@ -105,14 +106,14 @@ ANALYZE=true npm run build`}
           </pre>
 
           <p>
-            This gave us a visual representation of our bundle composition, helping us identify large dependencies and 
+            This gave us a visual representation of our bundle composition, helping us identify large dependencies and
             opportunities for optimization.
           </p>
 
           <h3 className="text-base font-medium mt-6 mb-2">2. Implementing Code Splitting</h3>
 
           <p>
-            Next.js provides automatic code splitting by pages, but we took it further by using dynamic imports for 
+            Next.js provides automatic code splitting by pages, but we took it further by using dynamic imports for
             components that weren't needed on initial load:
           </p>
 
@@ -125,7 +126,7 @@ import dynamic from 'next/dynamic';
 
 const HeavyComponent = dynamic(
   () => import('@/components/heavy-component'),
-  { 
+  {
     loading: () => <p>Loading...</p>,
     ssr: false // If the component doesn't need SSR
   }
@@ -133,7 +134,7 @@ const HeavyComponent = dynamic(
           </pre>
 
           <p>
-            This approach was particularly useful for our image enhancement features that use canvas manipulation, which 
+            This approach was particularly useful for our image enhancement features that use canvas manipulation, which
             isn't needed until the user uploads an image.
           </p>
 
@@ -154,7 +155,7 @@ import { Upload, Download, Image as ImageIcon } from 'lucide-react';`}
           <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
             <h3 className="text-sm font-medium mb-2">Solution Highlight</h3>
             <p className="text-xs text-muted-foreground">
-              By implementing these bundle optimization techniques, we reduced our initial JavaScript payload by 42%, 
+              By implementing these bundle optimization techniques, we reduced our initial JavaScript payload by 42%,
               resulting in a 1.2-second improvement in Time to Interactive metrics.
             </p>
           </div>
@@ -162,7 +163,7 @@ import { Upload, Download, Image as ImageIcon } from 'lucide-react';`}
           <h2 className="text-lg font-medium mt-8 mb-4">Troubleshooting Image Optimization</h2>
 
           <p>
-            As a screenshot enhancement application, image optimization is critical for SnapEnhance. Here's how we addressed 
+            As a screenshot enhancement application, image optimization is critical for SnapEnhance. Here's how we addressed
             common image-related issues:
           </p>
 
@@ -179,7 +180,7 @@ import { Upload, Download, Image as ImageIcon } from 'lucide-react';`}
 // After
 import Image from 'next/image';
 
-<Image 
+<Image
   src="/backgrounds/og.png"
   alt="OG Image"
   width={1200}
@@ -210,7 +211,7 @@ const dataUrl = canvas.toDataURL('image/png', 0.85); // Adjust quality as needed
           <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
 {`try {
   const dataUrl = canvas.toDataURL('image/png', 0.85);
-  
+
   // Verify the data URL is valid
   if (dataUrl && dataUrl.startsWith('data:image/png')) {
     setEnhancedImage(dataUrl);
@@ -237,7 +238,7 @@ const dataUrl = canvas.toDataURL('image/png', 0.85); // Adjust quality as needed
       <span className="animate-pulse">Loading...</span>
     </div>
   ) : null}
-  
+
   {uploadedImage ? (
     <img
       src={uploadedImage}
@@ -252,7 +253,7 @@ const dataUrl = canvas.toDataURL('image/png', 0.85); // Adjust quality as needed
           <h2 className="text-lg font-medium mt-8 mb-4">Environment Variables in Production</h2>
 
           <p>
-            Properly configuring environment variables is crucial for production builds, especially for API keys like our 
+            Properly configuring environment variables is crucial for production builds, especially for API keys like our
             Gemini API key. Here's how we addressed common issues:
           </p>
 
@@ -287,7 +288,7 @@ NEXT_PUBLIC_APP_VERSION=1.1.0`}
           </pre>
 
           <p>
-            For our Gemini API integration, we kept the API key server-side only and created an API route to handle 
+            For our Gemini API integration, we kept the API key server-side only and created an API route to handle
             the communication with Google's API.
           </p>
 
@@ -309,8 +310,8 @@ if (!apiKey) {
           <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
             <h3 className="text-sm font-medium mb-2">Troubleshooting Tip</h3>
             <p className="text-xs text-muted-foreground">
-              If your API integration works in development but fails in production, double-check that you've set the 
-              environment variables in your hosting platform (e.g., Vercel). Also verify that you're not trying to access 
+              If your API integration works in development but fails in production, double-check that you've set the
+              environment variables in your hosting platform (e.g., Vercel). Also verify that you're not trying to access
               server-side variables from client components.
             </p>
           </div>
@@ -318,7 +319,7 @@ if (!apiKey) {
           <h2 className="text-lg font-medium mt-8 mb-4">Rendering Optimization</h2>
 
           <p>
-            Next.js offers different rendering strategies, and choosing the right one for each page can significantly 
+            Next.js offers different rendering strategies, and choosing the right one for each page can significantly
             impact performance. Here's how we optimized rendering in SnapEnhance:
           </p>
 
@@ -363,7 +364,7 @@ export default function ImageEnhancer() {
           </pre>
 
           <p>
-            For SnapEnhance, we used server components for static content like blog posts and legal pages, while keeping 
+            For SnapEnhance, we used server components for static content like blog posts and legal pages, while keeping
             interactive features like the image enhancer as client components.
           </p>
 
@@ -384,12 +385,12 @@ function Component() {
 // Solution: Use useEffect for client-only code
 function Component() {
   const [timestamp, setTimestamp] = useState('');
-  
+
   useEffect(() => {
     // This only runs on the client after hydration
     setTimestamp(Date.now().toString());
   }, []);
-  
+
   return <div>{timestamp}</div>;
 }`}
           </pre>
@@ -474,29 +475,151 @@ export async function GET() {
             <li><strong>User Feedback</strong> - To identify issues that metrics might miss</li>
           </ul>
 
+          <h2 className="text-lg font-medium mt-8 mb-4">Troubleshooting API Response Errors</h2>
+
+          <p>
+            One particularly challenging issue we encountered in production was the "Unexpected token 'A', 'An error o'... is not valid JSON" error.
+            This occurred when our client-side code tried to parse a response from our API that wasn't valid JSON.
+          </p>
+
+          <h3 className="text-base font-medium mt-6 mb-2">1. Understanding the Problem</h3>
+
+          <p>
+            The error occurred specifically in our visual research feature that uses the Gemini API. In development, everything worked fine,
+            but in production, users would see the error "Received non-JSON response from server".
+          </p>
+
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+{`// The error occurred when trying to parse the API response
+try {
+  const data = await response.json();
+  // Process data...
+} catch (error) {
+  // Error: Unexpected token 'A', "An error o"... is not valid JSON
+}`}
+          </pre>
+
+          <h3 className="text-base font-medium mt-6 mb-2">2. Root Causes</h3>
+
+          <p>
+            After investigation, we identified several potential causes:
+          </p>
+
+          <ul className="list-disc pl-5 space-y-2 mt-2">
+            <li><strong>Missing Content-Type Headers</strong> - The API wasn't explicitly setting the Content-Type header to application/json</li>
+            <li><strong>Error Handling Issues</strong> - When errors occurred, the API was returning non-JSON responses</li>
+            <li><strong>Environment Variables</strong> - Missing API keys in production caused different error paths than in development</li>
+            <li><strong>Timeout Issues</strong> - Long-running requests were being terminated with non-JSON error messages</li>
+          </ul>
+
+          <h3 className="text-base font-medium mt-6 mb-2">3. Comprehensive Solution</h3>
+
+          <p>
+            We implemented a multi-layered solution to ensure robust error handling:
+          </p>
+
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+{`// Server-side: Always return valid JSON with explicit headers
+export async function POST(request: NextRequest) {
+  try {
+    // API logic here...
+    return new NextResponse(
+      JSON.stringify({ result: data }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+  } catch (error) {
+    // Even for errors, return valid JSON
+    return new NextResponse(
+      JSON.stringify({
+        error: error.message || 'An error occurred',
+        isSimulated: true,
+        // Include fallback content for better UX
+        result: 'Sorry, we encountered an error...'
+      }),
+      {
+        status: 200, // Use 200 to avoid CORS issues
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+  }
+}`}
+          </pre>
+
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+{`// Client-side: Robust response handling
+try {
+  // Get response as text first
+  const responseText = await response.text();
+
+  // Then try to parse as JSON
+  let data;
+  try {
+    data = JSON.parse(responseText);
+  } catch (jsonError) {
+    console.error('JSON parsing error:', jsonError);
+    // Use fallback data instead of throwing
+    data = {
+      result: 'Fallback content...',
+      isSimulated: true
+    };
+  }
+
+  // Use the data (original or fallback)
+  setSearchResult(data.result);
+} catch (err) {
+  // Handle fetch errors
+  console.error('Fetch error:', err);
+}`}
+          </pre>
+
+          <h3 className="text-base font-medium mt-6 mb-2">4. Edge Runtime Benefits</h3>
+
+          <p>
+            We also switched our API route to use the Edge runtime, which provided more consistent behavior between development and production:
+          </p>
+
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+{`// Set the runtime to edge for better performance and reliability
+export const runtime = 'edge';
+
+export async function POST(request: NextRequest) {
+  // API logic here...
+}`}
+          </pre>
+
+          <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
+            <h3 className="text-sm font-medium mb-2">Key Lesson</h3>
+            <p className="text-xs text-muted-foreground">
+              When working with APIs in production, always implement multiple layers of error handling. Get the raw response as text first before attempting to parse it as JSON, and always provide fallback content for a better user experience when errors occur.
+            </p>
+          </div>
+
           <h2 className="text-lg font-medium mt-8 mb-4">Conclusion</h2>
 
           <p>
-            Optimizing production builds requires a multifaceted approach addressing bundle size, image optimization, 
-            environment variables, and rendering strategies. By systematically troubleshooting these areas, we've 
-            significantly improved SnapEnhance's performance in production.
+            Optimizing production builds requires a multifaceted approach addressing bundle size, image optimization,
+            environment variables, rendering strategies, and robust error handling. By systematically troubleshooting these areas, we've
+            significantly improved SnapEnhance's performance and reliability in production.
           </p>
 
           <p>
-            Remember that optimization is a continuous process, not a one-time task. Regularly revisit your application's 
+            Remember that optimization is a continuous process, not a one-time task. Regularly revisit your application's
             performance metrics and user feedback to identify new opportunities for improvement.
           </p>
 
           <div className="border-t border-border/20 mt-8 pt-4">
             <p className="text-sm text-muted-foreground/80">
-              If you have specific questions about optimizing your Next.js application for production, feel free to reach out. 
+              If you have specific questions about optimizing your Next.js application for production, feel free to reach out.
               We're always learning and improving our approaches to production optimization.
             </p>
           </div>
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 20, 2025</p>
+          <p>Last updated: April 25, 2025</p>
         </div>
       </div>
     </div>

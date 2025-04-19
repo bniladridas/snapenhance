@@ -10,7 +10,7 @@ export default function ProductionBuildOptimizationPage() {
 
         <article className="prose prose-sm dark:prose-invert max-w-none">
           <p className="text-muted-foreground mb-4">
-            Published: April 20, 2025 | Updated: April 25, 2025 | Author: SnapEnhance Team
+            Published: April 20, 2025 | Author: SnapEnhance Team
           </p>
 
           <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
@@ -20,7 +20,7 @@ export default function ProductionBuildOptimizationPage() {
               <li>Common issues include large bundle sizes, slow initial load times, and rendering inconsistencies</li>
               <li>Proper image optimization is crucial for applications like SnapEnhance that handle visual content</li>
               <li>Environment variables and API keys need special handling in production builds</li>
-              <li>Robust API error handling is essential to prevent JSON parsing errors in production</li>
+              <li>Robust API error handling is essential to prevent JSON parsing errors and timeout issues in production</li>
               <li>Vercel deployment offers specific optimization features that can be leveraged</li>
             </ul>
           </div>
@@ -485,8 +485,8 @@ export async function GET() {
           <h3 className="text-base font-medium mt-6 mb-2">1. Understanding the Problem</h3>
 
           <p>
-            The error occurred specifically in our visual research feature that uses the Gemini API. In development, everything worked fine,
-            but in production, users would see the error "Received non-JSON response from server".
+            We encountered two related issues in our visual research feature that uses the Gemini API. In development, everything worked fine,
+            but in production, users would see either "Received non-JSON response from server" or "Request timed out. Please try again."
           </p>
 
           <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
@@ -509,7 +509,8 @@ try {
             <li><strong>Missing Content-Type Headers</strong> - The API wasn't explicitly setting the Content-Type header to application/json</li>
             <li><strong>Error Handling Issues</strong> - When errors occurred, the API was returning non-JSON responses</li>
             <li><strong>Environment Variables</strong> - Missing API keys in production caused different error paths than in development</li>
-            <li><strong>Timeout Issues</strong> - Long-running requests were being terminated with non-JSON error messages</li>
+            <li><strong>Timeout Issues</strong> - Long-running requests were being terminated with non-JSON error messages or timing out entirely</li>
+            <li><strong>AI Model Performance</strong> - The AI model we were using was sometimes too slow for production use</li>
           </ul>
 
           <h3 className="text-base font-medium mt-6 mb-2">3. Comprehensive Solution</h3>
@@ -575,7 +576,58 @@ try {
 }`}
           </pre>
 
-          <h3 className="text-base font-medium mt-6 mb-2">4. Edge Runtime Benefits</h3>
+          <h3 className="text-base font-medium mt-6 mb-2">4. Optimizing for Speed and Reliability</h3>
+
+          <p>
+            To address the timeout issues specifically, we implemented several optimizations:
+          </p>
+
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+{`// Client-side: Reduced timeout and better fallback handling
+// Use a shorter timeout to prevent long waits
+const controller = new AbortController();
+const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+
+// Handle timeout gracefully
+if (fetchError.name === 'AbortError') {
+  console.error('Request timed out');
+  // Instead of showing an error, show fallback content
+  setSearchResult('# Visual Design Principles\n- Use the rule of thirds...');
+  setIsSimulated(true);
+  setIsResultVisible(true);
+  setError('Request took too long. Showing general design principles instead.');
+  return; // Exit early with fallback content
+}`}
+          </pre>
+
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+{`// Server-side: Optimize prompt and use faster model
+// Simplified prompt for faster responses
+const prompt = \`As a visual content research assistant, provide brief insights about: "\${queryText}"
+  Focus on 2-3 of these most relevant to the query:
+  - Visual composition principles
+  - Color theory suggestions
+  - Typography recommendations
+  Keep your response concise (under 300 words). Prioritize speed.\`;
+
+// Use the fastest model available with a timeout
+const model = genAI.getGenerativeModel({
+  model: "gemini-1.5-flash" // Using the fastest model
+});
+
+// Create a timeout promise at the API level
+const timeoutPromise = new Promise((_, reject) => {
+  setTimeout(() => reject(new Error('API timeout')), 5000); // 5 second timeout
+});
+
+// Race between the API call and the timeout
+const result = await Promise.race([
+  model.generateContent(prompt),
+  timeoutPromise
+]);`}
+          </pre>
+
+          <h3 className="text-base font-medium mt-6 mb-2">5. Edge Runtime Benefits</h3>
 
           <p>
             We also switched our API route to use the Edge runtime, which provided more consistent behavior between development and production:
@@ -585,16 +637,26 @@ try {
 {`// Set the runtime to edge for better performance and reliability
 export const runtime = 'edge';
 
+// Explicitly mark as dynamic route
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
   // API logic here...
 }`}
           </pre>
 
           <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
-            <h3 className="text-sm font-medium mb-2">Key Lesson</h3>
+            <h3 className="text-sm font-medium mb-2">Key Lessons</h3>
             <p className="text-xs text-muted-foreground">
-              When working with APIs in production, always implement multiple layers of error handling. Get the raw response as text first before attempting to parse it as JSON, and always provide fallback content for a better user experience when errors occur.
+              When working with APIs in production, especially those that call external services like AI models:
             </p>
+            <ul className="list-disc pl-5 mt-2 text-xs text-muted-foreground">
+              <li>Implement multiple layers of error handling and timeouts</li>
+              <li>Get the raw response as text first before attempting to parse it as JSON</li>
+              <li>Always provide fallback content for a better user experience when errors occur</li>
+              <li>Optimize prompts and model selection for speed in production environments</li>
+              <li>Use the Edge runtime for better performance with API routes</li>
+            </ul>
           </div>
 
           <h2 className="text-lg font-medium mt-8 mb-4">Conclusion</h2>
@@ -619,7 +681,7 @@ export async function POST(request: NextRequest) {
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 25, 2025</p>
+          <p>Last updated: April 20, 2025</p>
         </div>
       </div>
     </div>

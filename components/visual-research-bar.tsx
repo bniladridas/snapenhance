@@ -39,7 +39,7 @@ export function VisualResearchBar() {
     try {
       // Use a timeout to prevent hanging requests
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+      const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout - reduced from 15s
 
       try {
         const response = await fetch('/api/visual-research', {
@@ -87,7 +87,13 @@ export function VisualResearchBar() {
         clearTimeout(timeoutId); // Clear the timeout
 
         if (fetchError.name === 'AbortError') {
-          throw new Error('Request timed out. Please try again.');
+          console.error('Request timed out');
+          // Instead of throwing, directly set a fallback result
+          setSearchResult('# Visual Design Principles\n- Use the rule of thirds for balanced compositions\n- Create visual hierarchy to guide attention\n- Maintain consistent color schemes\n- Use typography to establish tone and readability\n- Ensure adequate white space for visual breathing room');
+          setIsSimulated(true);
+          setIsResultVisible(true);
+          setError('Request took too long. Showing general design principles instead.');
+          return; // Exit early with fallback content
         }
         throw fetchError;
       }

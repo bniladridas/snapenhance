@@ -89,7 +89,12 @@ function getSimulatedResponse(query: string): string {
 }
 
 // Set the runtime to edge for better performance and reliability
+// Note: This will show a warning during build: "Using edge runtime on a page currently disables static generation for that page"
+// This is expected and appropriate for API routes that need to run on-demand
 export const runtime = 'edge';
+
+// Explicitly mark as dynamic route
+export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   // Always use a try-catch to ensure we return a valid JSON response
@@ -136,32 +141,41 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      // Create the prompt with visual content research context
-      const prompt = `As a visual content research assistant, provide insights, ideas, and recommendations for the following query related to visual design, imagery, or content creation: "${queryText}"
+      // Create the prompt with visual content research context - optimized for faster responses
+      const prompt = `As a visual content research assistant, provide brief insights about the following query related to visual design: "${queryText}"
 
-      Focus on:
+      Focus on 2-3 of these most relevant to the query:
       - Visual composition principles
-      - Color theory and palette suggestions
+      - Color theory suggestions
       - Typography recommendations
-      - Layout and spacing considerations
-      - Mood and emotional impact
-      - Target audience considerations
-      - Current design trends
+      - Layout considerations
+      - Mood impact
+      - Target audience
+      - Current trends
 
-      Format your response in a clear, concise manner with bullet points where appropriate.`;
+      Keep your response concise (under 300 words) with bullet points. Prioritize speed over comprehensiveness.`;
 
       // Initialize the Generative AI model with the correct model name
       const genAI = new GoogleGenerativeAI(apiKey);
 
-      // Use a more reliable model or fallback to a simulated response
+      // Use the fastest model available with a timeout
       try {
-        // Try with the specified model
+        // Start with the fastest model
         const model = genAI.getGenerativeModel({
-          model: "gemini-2.5-flash-preview-04-17"
+          model: "gemini-1.5-flash" // Using the fastest model instead of preview
         });
 
-        // Generate content
-        const result = await model.generateContent(prompt);
+        // Create a timeout promise
+        const timeoutPromise = new Promise((_, reject) => {
+          setTimeout(() => reject(new Error('API timeout')), 5000); // 5 second timeout
+        });
+
+        // Race between the API call and the timeout
+        const result = await Promise.race([
+          model.generateContent(prompt),
+          timeoutPromise
+        ]) as any;
+
         const response = result.response;
         const text = response.text();
 
@@ -176,33 +190,21 @@ export async function POST(request: NextRequest) {
           }
         );
       } catch (modelError) {
-        console.error('Error with primary model, trying fallback:', modelError);
+        console.error('Error or timeout with model:', modelError);
 
-        // Try with a fallback model
-        try {
-          const fallbackModel = genAI.getGenerativeModel({
-            model: "gemini-1.5-flash"
-          });
-
-          const result = await fallbackModel.generateContent(prompt);
-          const response = result.response;
-          const text = response.text();
-
-          return new NextResponse(
-            JSON.stringify({
-              result: text,
-              isSimulated: false,
-              usedFallbackModel: true
-            }),
-            {
-              status: 200,
-              headers: { 'Content-Type': 'application/json' }
-            }
-          );
-        } catch (fallbackError) {
-          console.error('Fallback model also failed:', fallbackError);
-          throw fallbackError; // Let the outer catch handle it
-        }
+        // If we get here, either the model failed or timed out
+        // Return a simulated response immediately instead of trying another model
+        return new NextResponse(
+          JSON.stringify({
+            result: getSimulatedResponse(queryText),
+            isSimulated: true,
+            error: modelError instanceof Error ? modelError.message : 'Model error or timeout'
+          }),
+          {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' }
+          }
+        );
       }
     } catch (error: any) {
       console.error('Error calling Gemini API:', error);

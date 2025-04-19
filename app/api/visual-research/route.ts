@@ -88,35 +88,51 @@ function getSimulatedResponse(query: string): string {
   }
 }
 
+// Set the runtime to edge for better performance and reliability
+export const runtime = 'edge';
+
 export async function POST(request: NextRequest) {
+  // Always use a try-catch to ensure we return a valid JSON response
   try {
     // First try to parse the request body as JSON
-    let queryText;
+    let queryText = '';
     try {
-      const { query } = await request.json();
-      queryText = query;
+      const body = await request.json();
+      queryText = body.query || '';
     } catch (parseError) {
       console.error('Error parsing request JSON:', parseError);
-      return NextResponse.json(
-        { error: 'Invalid request format' },
-        { status: 400 }
+      return new NextResponse(
+        JSON.stringify({ error: 'Invalid request format', isSimulated: true }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' }
+        }
       );
     }
 
     if (!queryText || queryText.trim() === '') {
-      return NextResponse.json(
-        { error: 'Query is required' },
-        { status: 400 }
+      return new NextResponse(
+        JSON.stringify({ error: 'Query is required', isSimulated: true }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' }
+        }
       );
     }
 
     // If API key is not available, return a simulated response
     if (!apiKey) {
       console.log('API key not available, using simulated response');
-      return NextResponse.json({
-        result: getSimulatedResponse(queryText),
-        isSimulated: true
-      });
+      return new NextResponse(
+        JSON.stringify({
+          result: getSimulatedResponse(queryText),
+          isSimulated: true
+        }),
+        {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
     }
 
     try {
@@ -136,21 +152,58 @@ export async function POST(request: NextRequest) {
 
       // Initialize the Generative AI model with the correct model name
       const genAI = new GoogleGenerativeAI(apiKey);
-      // Use the correct model name for the Gemini API
-      const model = genAI.getGenerativeModel({
-        model: "gemini-2.5-flash-preview-04-17"
-        // No need to explicitly set API version as it's handled by the SDK
-      });
 
-      // Generate content
-      const result = await model.generateContent(prompt);
-      const response = result.response;
-      const text = response.text();
+      // Use a more reliable model or fallback to a simulated response
+      try {
+        // Try with the specified model
+        const model = genAI.getGenerativeModel({
+          model: "gemini-2.5-flash-preview-04-17"
+        });
 
-      return NextResponse.json({
-        result: text,
-        isSimulated: false
-      });
+        // Generate content
+        const result = await model.generateContent(prompt);
+        const response = result.response;
+        const text = response.text();
+
+        return new NextResponse(
+          JSON.stringify({
+            result: text,
+            isSimulated: false
+          }),
+          {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' }
+          }
+        );
+      } catch (modelError) {
+        console.error('Error with primary model, trying fallback:', modelError);
+
+        // Try with a fallback model
+        try {
+          const fallbackModel = genAI.getGenerativeModel({
+            model: "gemini-1.5-flash"
+          });
+
+          const result = await fallbackModel.generateContent(prompt);
+          const response = result.response;
+          const text = response.text();
+
+          return new NextResponse(
+            JSON.stringify({
+              result: text,
+              isSimulated: false,
+              usedFallbackModel: true
+            }),
+            {
+              status: 200,
+              headers: { 'Content-Type': 'application/json' }
+            }
+          );
+        } catch (fallbackError) {
+          console.error('Fallback model also failed:', fallbackError);
+          throw fallbackError; // Let the outer catch handle it
+        }
+      }
     } catch (error: any) {
       console.error('Error calling Gemini API:', error);
 
@@ -163,18 +216,30 @@ export async function POST(request: NextRequest) {
       }
 
       // Fallback to simulated response if API call fails
-      return NextResponse.json({
-        result: getSimulatedResponse(queryText),
-        // Include a note that this is a simulated response
-        isSimulated: true
-      });
+      return new NextResponse(
+        JSON.stringify({
+          result: getSimulatedResponse(queryText),
+          isSimulated: true
+        }),
+        {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
     }
   } catch (error: any) {
     console.error('Error in visual research API:', error);
     // Ensure we always return a valid JSON response
-    return NextResponse.json(
-      { error: error.message || 'An error occurred during visual research', isSimulated: true },
-      { status: 500 }
+    return new NextResponse(
+      JSON.stringify({
+        error: error.message || 'An error occurred during visual research',
+        isSimulated: true,
+        result: 'Sorry, we encountered an error processing your request. Here are some general visual design principles:\n\n# Visual Design Principles\n- Use the rule of thirds for balanced compositions\n- Create visual hierarchy to guide attention\n- Maintain consistent color schemes\n- Use typography to establish tone and readability\n- Ensure adequate white space for visual breathing room'
+      }),
+      {
+        status: 200, // Return 200 even for errors to avoid CORS issues
+        headers: { 'Content-Type': 'application/json' }
+      }
     );
   }
 }

@@ -37,43 +37,68 @@ export function VisualResearchBar() {
     setError(null);
 
     try {
-      const response = await fetch('/api/visual-research', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query }),
-      });
+      // Use a timeout to prevent hanging requests
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
 
-      // Check if the response is JSON
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
-        // Handle non-JSON response
-        const textResponse = await response.text();
-        console.error('Non-JSON response:', textResponse);
-        throw new Error('Received non-JSON response from server');
-      }
-
-      // Parse JSON response
-      let data;
       try {
-        data = await response.json();
-      } catch (jsonError) {
-        console.error('JSON parsing error:', jsonError);
-        throw new Error('Failed to parse server response');
-      }
+        const response = await fetch('/api/visual-research', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query }),
+          signal: controller.signal
+        });
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to get research results');
-      }
+        clearTimeout(timeoutId); // Clear the timeout if the request completes
 
-      setSearchResult(data.result);
-      setIsSimulated(data.isSimulated || false);
-      setIsResultVisible(true);
+        // First try to get the response as text
+        const responseText = await response.text();
+
+        // Then try to parse it as JSON
+        let data;
+        try {
+          data = JSON.parse(responseText);
+        } catch (jsonError) {
+          console.error('JSON parsing error:', jsonError, 'Response text:', responseText);
+          // Use a fallback response
+          data = {
+            result: '# Visual Design Principles\n- Use the rule of thirds for balanced compositions\n- Create visual hierarchy to guide attention\n- Maintain consistent color schemes\n- Use typography to establish tone and readability\n- Ensure adequate white space for visual breathing room',
+            isSimulated: true,
+            error: 'Failed to parse server response'
+          };
+        }
+
+        // Check if we have an error message
+        if (data.error && !data.result) {
+          throw new Error(data.error);
+        }
+
+        // If we have a result, show it even if there was an error
+        if (data.result) {
+          setSearchResult(data.result);
+          setIsSimulated(data.isSimulated || false);
+          setIsResultVisible(true);
+        } else {
+          throw new Error('No result found in response');
+        }
+      } catch (fetchError: any) {
+        clearTimeout(timeoutId); // Clear the timeout
+
+        if (fetchError.name === 'AbortError') {
+          throw new Error('Request timed out. Please try again.');
+        }
+        throw fetchError;
+      }
     } catch (err: any) {
       console.error('Search error:', err);
       setError(err.message || 'An error occurred during research');
-      setSearchResult(null);
+
+      // Set a fallback result for a better user experience
+      setSearchResult('# Visual Design Principles\n- Use the rule of thirds for balanced compositions\n- Create visual hierarchy to guide attention\n- Maintain consistent color schemes\n- Use typography to establish tone and readability\n- Ensure adequate white space for visual breathing room');
+      setIsSimulated(true);
+      setIsResultVisible(true);
     } finally {
       setIsSearching(false);
     }
@@ -120,7 +145,15 @@ export function VisualResearchBar() {
     setShowSuggestions(false);
     // Auto-search after selecting a suggestion
     setTimeout(() => {
-      handleSearch(new Event('submit') as any);
+      try {
+        handleSearch(new Event('submit') as any);
+      } catch (error) {
+        console.error('Error auto-searching suggestion:', error);
+        // Fallback to showing a simulated response
+        setSearchResult('# Visual Design Principles\n- Use the rule of thirds for balanced compositions\n- Create visual hierarchy to guide attention\n- Maintain consistent color schemes\n- Use typography to establish tone and readability\n- Ensure adequate white space for visual breathing room');
+        setIsSimulated(true);
+        setIsResultVisible(true);
+      }
     }, 100);
   };
 

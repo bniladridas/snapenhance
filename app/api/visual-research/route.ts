@@ -90,9 +90,20 @@ function getSimulatedResponse(query: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-    const { query } = await request.json();
+    // First try to parse the request body as JSON
+    let queryText;
+    try {
+      const { query } = await request.json();
+      queryText = query;
+    } catch (parseError) {
+      console.error('Error parsing request JSON:', parseError);
+      return NextResponse.json(
+        { error: 'Invalid request format' },
+        { status: 400 }
+      );
+    }
 
-    if (!query || query.trim() === '') {
+    if (!queryText || queryText.trim() === '') {
       return NextResponse.json(
         { error: 'Query is required' },
         { status: 400 }
@@ -101,12 +112,16 @@ export async function POST(request: NextRequest) {
 
     // If API key is not available, return a simulated response
     if (!apiKey) {
-      return NextResponse.json({ result: getSimulatedResponse(query) });
+      console.log('API key not available, using simulated response');
+      return NextResponse.json({
+        result: getSimulatedResponse(queryText),
+        isSimulated: true
+      });
     }
 
     try {
       // Create the prompt with visual content research context
-      const prompt = `As a visual content research assistant, provide insights, ideas, and recommendations for the following query related to visual design, imagery, or content creation: "${query}"
+      const prompt = `As a visual content research assistant, provide insights, ideas, and recommendations for the following query related to visual design, imagery, or content creation: "${queryText}"
 
       Focus on:
       - Visual composition principles
@@ -129,7 +144,7 @@ export async function POST(request: NextRequest) {
 
       // Generate content
       const result = await model.generateContent(prompt);
-      const response = await result.response;
+      const response = result.response;
       const text = response.text();
 
       return NextResponse.json({
@@ -149,15 +164,16 @@ export async function POST(request: NextRequest) {
 
       // Fallback to simulated response if API call fails
       return NextResponse.json({
-        result: getSimulatedResponse(query),
+        result: getSimulatedResponse(queryText),
         // Include a note that this is a simulated response
         isSimulated: true
       });
     }
   } catch (error: any) {
     console.error('Error in visual research API:', error);
+    // Ensure we always return a valid JSON response
     return NextResponse.json(
-      { error: error.message || 'An error occurred during visual research' },
+      { error: error.message || 'An error occurred during visual research', isSimulated: true },
       { status: 500 }
     );
   }

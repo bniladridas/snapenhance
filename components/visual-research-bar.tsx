@@ -45,7 +45,23 @@ export function VisualResearchBar() {
         body: JSON.stringify({ query }),
       });
 
-      const data = await response.json();
+      // Check if the response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        // Handle non-JSON response
+        const textResponse = await response.text();
+        console.error('Non-JSON response:', textResponse);
+        throw new Error('Received non-JSON response from server');
+      }
+
+      // Parse JSON response
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        console.error('JSON parsing error:', jsonError);
+        throw new Error('Failed to parse server response');
+      }
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to get research results');
@@ -55,6 +71,7 @@ export function VisualResearchBar() {
       setIsSimulated(data.isSimulated || false);
       setIsResultVisible(true);
     } catch (err: any) {
+      console.error('Search error:', err);
       setError(err.message || 'An error occurred during research');
       setSearchResult(null);
     } finally {

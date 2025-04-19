@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="400" height="225" rx="8" fill="url(#exec-gradient)"/>
+  
+  <!-- Grid pattern -->
+  <path d="M0 0h400v225H0z" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- Executive header -->
+  <rect x="40" y="30" width="320" height="50" rx="4" fill="white" opacity="0.9"/>
+  <rect x="40" y="30" width="10" height="50" rx="4 0 0 4" fill="#ef4444"/>
+  <rect x="70" y="45" width="200" height="10" rx="2" fill="#0f172a" opacity="0.8"/>
+  <rect x="70" y="60" width="120" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  
+  <!-- KPI section -->
+  <rect x="40" y="100" width="100" height="80" rx="4" fill="white" opacity="0.8"/>
+  <rect x="50" y="110" width="80" height="8" rx="2" fill="#0f172a" opacity="0.6"/>
+  <rect x="50" y="130" width="80" height="30" rx="4" fill="#ef4444" opacity="0.1"/>
+  <text x="90" y="150" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#ef4444">+24%</text>
+  <rect x="50" y="165" width="60" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  
+  <rect x="150" y="100" width="100" height="80" rx="4" fill="white" opacity="0.8"/>
+  <rect x="160" y="110" width="80" height="8" rx="2" fill="#0f172a" opacity="0.6"/>
+  <rect x="160" y="130" width="80" height="30" rx="4" fill="#ef4444" opacity="0.1"/>
+  <text x="200" y="150" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#ef4444">$2.4M</text>
+  <rect x="160" y="165" width="60" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  
+  <rect x="260" y="100" width="100" height="80" rx="4" fill="white" opacity="0.8"/>
+  <rect x="270" y="110" width="80" height="8" rx="2" fill="#0f172a" opacity="0.6"/>
+  <rect x="270" y="130" width="80" height="30" rx="4" fill="#ef4444" opacity="0.1"/>
+  <text x="310" y="150" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#ef4444">98%</text>
+  <rect x="270" y="165" width="60" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="exec-gradient" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fee2e2"/>
+      <stop offset="1" stop-color="#fecaca"/>
+    </linearGradient>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2)">
+      <path d="M20 0L0 0L0 20" stroke="#ef4444" stroke-width="0.5" fill="none" opacity="0.5"/>
+    </pattern>
+  </defs>
+</svg>

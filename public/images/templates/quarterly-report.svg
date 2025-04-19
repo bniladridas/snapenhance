@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="400" height="225" rx="8" fill="url(#report-gradient)"/>
+  
+  <!-- Grid pattern -->
+  <path d="M0 0h400v225H0z" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- Report header -->
+  <rect x="40" y="30" width="320" height="30" rx="4" fill="white" opacity="0.9"/>
+  <rect x="50" y="40" width="140" height="10" rx="2" fill="#0f172a" opacity="0.7"/>
+  
+  <!-- Chart area -->
+  <rect x="40" y="80" width="150" height="115" rx="4" fill="white" opacity="0.8"/>
+  
+  <!-- Bar chart -->
+  <rect x="60" y="170" width="20" height="15" rx="2" fill="#10b981"/>
+  <rect x="90" y="150" width="20" height="35" rx="2" fill="#10b981"/>
+  <rect x="120" y="130" width="20" height="55" rx="2" fill="#10b981"/>
+  <rect x="150" y="100" width="20" height="85" rx="2" fill="#10b981"/>
+  
+  <!-- Chart title -->
+  <rect x="60" y="90" width="100" height="6" rx="2" fill="#0f172a" opacity="0.6"/>
+  
+  <!-- Data table -->
+  <rect x="210" y="80" width="150" height="115" rx="4" fill="white" opacity="0.8"/>
+  
+  <!-- Table rows -->
+  <rect x="220" y="95" width="130" height="1" rx="0.5" fill="#0f172a" opacity="0.2"/>
+  <rect x="220" y="115" width="130" height="1" rx="0.5" fill="#0f172a" opacity="0.2"/>
+  <rect x="220" y="135" width="130" height="1" rx="0.5" fill="#0f172a" opacity="0.2"/>
+  <rect x="220" y="155" width="130" height="1" rx="0.5" fill="#0f172a" opacity="0.2"/>
+  <rect x="220" y="175" width="130" height="1" rx="0.5" fill="#0f172a" opacity="0.2"/>
+  
+  <!-- Table headers -->
+  <rect x="220" y="85" width="60" height="6" rx="2" fill="#0f172a" opacity="0.6"/>
+  <rect x="290" y="85" width="40" height="6" rx="2" fill="#0f172a" opacity="0.6"/>
+  
+  <!-- Table data -->
+  <rect x="220" y="105" width="40" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  <rect x="290" y="105" width="20" height="4" rx="1" fill="#10b981" opacity="0.7"/>
+  
+  <rect x="220" y="125" width="40" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  <rect x="290" y="125" width="30" height="4" rx="1" fill="#10b981" opacity="0.7"/>
+  
+  <rect x="220" y="145" width="40" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  <rect x="290" y="145" width="40" height="4" rx="1" fill="#10b981" opacity="0.7"/>
+  
+  <rect x="220" y="165" width="40" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  <rect x="290" y="165" width="50" height="4" rx="1" fill="#10b981" opacity="0.7"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="report-gradient" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dcfce7"/>
+      <stop offset="1" stop-color="#86efac"/>
+    </linearGradient>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2)">
+      <path d="M20 0L0 0L0 20" stroke="#10b981" stroke-width="0.5" fill="none" opacity="0.5"/>
+    </pattern>
+  </defs>
+</svg>

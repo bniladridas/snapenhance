@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="400" height="225" rx="8" fill="url(#social-gradient)"/>
+  
+  <!-- Grid pattern -->
+  <path d="M0 0h400v225H0z" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- Social media frame -->
+  <rect x="50" y="40" width="300" height="145" rx="8" fill="white" opacity="0.95"/>
+  
+  <!-- Header bar -->
+  <rect x="50" y="40" width="300" height="30" rx="8 8 0 0" fill="#f97316" opacity="0.1"/>
+  <circle cx="70" cy="55" r="8" fill="#f97316" opacity="0.8"/>
+  <rect x="90" y="51" width="60" height="8" rx="2" fill="#0f172a" opacity="0.6"/>
+  
+  <!-- Post content -->
+  <rect x="70" y="85" width="260" height="8" rx="2" fill="#0f172a" opacity="0.7"/>
+  <rect x="70" y="100" width="240" height="8" rx="2" fill="#0f172a" opacity="0.5"/>
+  <rect x="70" y="115" width="220" height="8" rx="2" fill="#0f172a" opacity="0.5"/>
+  
+  <!-- Image placeholder -->
+  <rect x="70" y="135" width="80" height="30" rx="4" fill="#f97316" opacity="0.2"/>
+  <rect x="75" y="140" width="70" height="20" rx="2" fill="#f97316" opacity="0.4"/>
+  
+  <!-- Action buttons -->
+  <rect x="170" y="135" width="60" height="30" rx="15" fill="#f97316" opacity="0.1"/>
+  <rect x="180" y="147" width="40" height="6" rx="2" fill="#f97316"/>
+  
+  <rect x="240" y="135" width="60" height="30" rx="15" fill="#f97316" opacity="0.1"/>
+  <rect x="250" y="147" width="40" height="6" rx="2" fill="#0f172a" opacity="0.3"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="social-gradient" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffedd5"/>
+      <stop offset="1" stop-color="#fed7aa"/>
+    </linearGradient>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2)">
+      <path d="M20 0L0 0L0 20" stroke="#f97316" stroke-width="0.5" fill="none" opacity="0.5"/>
+    </pattern>
+  </defs>
+</svg>

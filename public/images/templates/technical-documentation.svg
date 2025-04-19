@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="400" height="225" rx="8" fill="url(#tech-gradient)"/>
+  
+  <!-- Grid pattern -->
+  <path d="M0 0h400v225H0z" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- Documentation layout -->
+  <rect x="40" y="30" width="320" height="165" rx="4" fill="white" opacity="0.9"/>
+  
+  <!-- Sidebar -->
+  <rect x="40" y="30" width="80" height="165" rx="4 0 0 4" fill="#0f172a" opacity="0.05"/>
+  
+  <!-- Sidebar items -->
+  <rect x="50" y="50" width="60" height="8" rx="2" fill="#0f172a" opacity="0.6"/>
+  <rect x="50" y="70" width="50" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="50" y="85" width="55" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="50" y="100" width="45" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="50" y="115" width="60" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="50" y="130" width="40" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  
+  <!-- Content header -->
+  <rect x="140" y="50" width="200" height="10" rx="2" fill="#0f172a" opacity="0.7"/>
+  
+  <!-- Content blocks -->
+  <rect x="140" y="70" width="180" height="6" rx="2" fill="#0f172a" opacity="0.5"/>
+  <rect x="140" y="85" width="200" height="6" rx="2" fill="#0f172a" opacity="0.5"/>
+  <rect x="140" y="100" width="190" height="6" rx="2" fill="#0f172a" opacity="0.5"/>
+  
+  <!-- Code block -->
+  <rect x="140" y="120" width="200" height="50" rx="4" fill="#0f172a" opacity="0.05"/>
+  <rect x="150" y="130" width="180" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  <rect x="150" y="140" width="160" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  <rect x="150" y="150" width="170" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  <rect x="150" y="160" width="140" height="4" rx="1" fill="#0f172a" opacity="0.4"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="tech-gradient" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f5f9"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2)">
+      <path d="M20 0L0 0L0 20" stroke="#64748b" stroke-width="0.5" fill="none" opacity="0.5"/>
+    </pattern>
+  </defs>
+</svg>

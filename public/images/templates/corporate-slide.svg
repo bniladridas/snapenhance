@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="400" height="225" rx="8" fill="url(#corporate-gradient)"/>
+  
+  <!-- Grid pattern -->
+  <path d="M0 0h400v225H0z" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- Corporate elements -->
+  <rect x="40" y="40" width="320" height="40" rx="4" fill="white" opacity="0.9"/>
+  <rect x="40" y="40" width="8" height="40" rx="0" fill="#3b82f6"/>
+  <rect x="60" y="55" width="120" height="10" rx="2" fill="#0f172a" opacity="0.7"/>
+  
+  <!-- Content blocks -->
+  <rect x="40" y="100" width="150" height="85" rx="4" fill="white" opacity="0.8"/>
+  <rect x="210" y="100" width="150" height="85" rx="4" fill="white" opacity="0.8"/>
+  
+  <!-- Content lines -->
+  <rect x="50" y="115" width="130" height="6" rx="2" fill="#0f172a" opacity="0.6"/>
+  <rect x="50" y="130" width="110" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="50" y="145" width="120" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="50" y="160" width="90" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  
+  <rect x="220" y="115" width="130" height="6" rx="2" fill="#0f172a" opacity="0.6"/>
+  <rect x="220" y="130" width="110" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="220" y="145" width="120" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  <rect x="220" y="160" width="90" height="6" rx="2" fill="#0f172a" opacity="0.4"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="corporate-gradient" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dbeafe"/>
+      <stop offset="1" stop-color="#93c5fd"/>
+    </linearGradient>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2)">
+      <path d="M20 0L0 0L0 20" stroke="#3b82f6" stroke-width="0.5" fill="none" opacity="0.5"/>
+    </pattern>
+  </defs>
+</svg>

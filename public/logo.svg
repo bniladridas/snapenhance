@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="48" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: hsl(0, 0%, 3.9%); }
+      .text { fill: hsl(0, 0%, 98%); }
+      .accent { fill: hsl(0, 0%, 14.9%); }
+    }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: hsl(0, 0%, 100%); }
+      .text { fill: hsl(0, 0%, 3.9%); }
+      .accent { fill: hsl(0, 0%, 96.1%); }
+    }
+  </style>
+
+  <!-- Background with rounded corners matching the app's aesthetic -->
+  <rect width="160" height="48" rx="12" class="bg"/>
+
+  <!-- Stylized S and E letters matching the favicon -->
+  <g class="text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;">
+    <text x="30" y="32" font-size="24">S</text>
+    <text x="50" y="32" font-size="24">E</text>
+  </g>
+
+  <!-- Full name next to the logo -->
+  <g class="text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400;">
+    <text x="80" y="32" font-size="18">SnapEnhance</text>
+  </g>
+
+  <!-- Subtle accent element matching the favicon -->
+  <rect x="30" y="36" width="100" height="3" rx="1.5" class="accent"/>
+</svg>

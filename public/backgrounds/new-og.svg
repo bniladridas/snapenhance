@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle gradient -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Grid pattern for subtle texture -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 0, 0, 0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Main content container -->
+  <rect x="200" y="115" width="800" height="400" rx="24" fill="white" filter="drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.08))"/>
+  
+  <!-- Logo section -->
+  <g transform="translate(300, 215)">
+    <!-- Logo background -->
+    <rect width="160" height="160" rx="24" fill="white" stroke="rgba(0, 0, 0, 0.05)" stroke-width="2"/>
+    
+    <!-- Stylized S and E letters -->
+    <g style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;">
+      <text x="40" y="100" font-size="80" fill="hsl(0, 0%, 3.9%)">S</text>
+      <text x="85" y="100" font-size="80" fill="hsl(0, 0%, 3.9%)">E</text>
+    </g>
+    
+    <!-- Subtle accent element -->
+    <rect x="40" y="110" width="80" height="6" rx="3" fill="hsl(0, 0%, 96.1%)"/>
+  </g>
+  
+  <!-- Text content -->
+  <g transform="translate(520, 215)">
+    <!-- App name -->
+    <text x="0" y="50" font-size="64" fill="hsl(0, 0%, 3.9%)" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;">SnapEnhance</text>
+    
+    <!-- Tagline -->
+    <text x="0" y="110" font-size="28" fill="hsl(0, 0%, 45.1%)" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400;">Screenshot Enhancement and</text>
+    <text x="0" y="150" font-size="28" fill="hsl(0, 0%, 45.1%)" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400;">Visual Content Platform</text>
+    
+    <!-- Feature highlights -->
+    <g transform="translate(0, 200)">
+      <g transform="translate(0, 0)">
+        <circle cx="12" cy="12" r="12" fill="hsl(0, 0%, 96.1%)"/>
+        <text x="35" y="17" font-size="20" fill="hsl(0, 0%, 25%)" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400;">Professional Backgrounds</text>
+      </g>
+      
+      <g transform="translate(0, 45)">
+        <circle cx="12" cy="12" r="12" fill="hsl(0, 0%, 96.1%)"/>
+        <text x="35" y="17" font-size="20" fill="hsl(0, 0%, 25%)" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400;">Multiple Format Support</text>
+      </g>
+      
+      <g transform="translate(0, 90)">
+        <circle cx="12" cy="12" r="12" fill="hsl(0, 0%, 96.1%)"/>
+        <text x="35" y="17" font-size="20" fill="hsl(0, 0%, 25%)" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400;">Dark Mode Support</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="80" fill="url(#circle-gradient-1)" opacity="0.7"/>
+  <circle cx="1050" cy="480" r="100" fill="url(#circle-gradient-2)" opacity="0.7"/>
+  
+  <!-- URL at bottom -->
+  <text x="600" y="580" font-size="20" fill="hsl(0, 0%, 45.1%)" text-anchor="middle" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400;">snapenhance.vercel.app</text>
+  
+  <!-- Definitions -->
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="hsl(0, 0%, 98%)"/>
+      <stop offset="1" stop-color="hsl(0, 0%, 96%)"/>
+    </linearGradient>
+    
+    <!-- Circle gradients -->
+    <linearGradient id="circle-gradient-1" x1="0" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="hsl(220, 70%, 90%)"/>
+      <stop offset="1" stop-color="hsl(220, 70%, 80%)"/>
+    </linearGradient>
+    
+    <linearGradient id="circle-gradient-2" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="hsl(180, 70%, 90%)"/>
+      <stop offset="1" stop-color="hsl(180, 70%, 80%)"/>
+    </linearGradient>
+  </defs>
+</svg>

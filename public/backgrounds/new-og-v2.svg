@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle gradient - using the exact theme colors from the app -->
+  <rect width="1200" height="630" fill="hsl(0, 0%, 100%)" class="light-bg"/>
+  <rect width="1200" height="630" fill="hsl(0, 0%, 3.9%)" class="dark-bg" style="display: none;"/>
+  
+  <!-- Subtle grid pattern for texture -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 0, 0, 0.03)" stroke-width="1" class="light-grid"/>
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" class="dark-grid" style="display: none;"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Main content area with subtle border -->
+  <rect x="150" y="115" width="900" height="400" rx="16" fill="hsl(0, 0%, 100%)" class="light-card" stroke="hsl(0, 0%, 89.8%)" stroke-width="1"/>
+  <rect x="150" y="115" width="900" height="400" rx="16" fill="hsl(0, 0%, 3.9%)" class="dark-card" stroke="hsl(0, 0%, 14.9%)" stroke-width="1" style="display: none;"/>
+  
+  <!-- Logo -->
+  <g transform="translate(200, 215)">
+    <!-- Logo background -->
+    <rect width="120" height="120" rx="12" fill="hsl(0, 0%, 100%)" class="light-logo-bg" stroke="hsl(0, 0%, 89.8%)" stroke-width="1"/>
+    <rect width="120" height="120" rx="12" fill="hsl(0, 0%, 3.9%)" class="dark-logo-bg" stroke="hsl(0, 0%, 14.9%)" stroke-width="1" style="display: none;"/>
+    
+    <!-- Stylized S and E letters - using the exact font from the app -->
+    <text x="25" y="80" font-size="60" fill="hsl(0, 0%, 3.9%)" class="light-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;">S</text>
+    <text x="60" y="80" font-size="60" fill="hsl(0, 0%, 3.9%)" class="light-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;">E</text>
+    
+    <text x="25" y="80" font-size="60" fill="hsl(0, 0%, 98%)" class="dark-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; display: none;">S</text>
+    <text x="60" y="80" font-size="60" fill="hsl(0, 0%, 98%)" class="dark-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; display: none;">E</text>
+    
+    <!-- Subtle accent element -->
+    <rect x="25" y="90" width="70" height="4" rx="2" fill="hsl(0, 0%, 96.1%)" class="light-accent"/>
+    <rect x="25" y="90" width="70" height="4" rx="2" fill="hsl(0, 0%, 14.9%)" class="dark-accent" style="display: none;"/>
+  </g>
+  
+  <!-- Text content -->
+  <g transform="translate(380, 215)">
+    <!-- App name -->
+    <text x="0" y="40" font-size="48" fill="hsl(0, 0%, 3.9%)" class="light-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; letter-spacing: -0.015em;">SnapEnhance</text>
+    <text x="0" y="40" font-size="48" fill="hsl(0, 0%, 98%)" class="dark-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; letter-spacing: -0.015em; display: none;">SnapEnhance</text>
+    
+    <!-- Tagline -->
+    <text x="0" y="90" font-size="24" fill="hsl(0, 0%, 45.1%)" class="light-muted" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em;">Screenshot Enhancement and</text>
+    <text x="0" y="125" font-size="24" fill="hsl(0, 0%, 45.1%)" class="light-muted" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em;">Visual Content Platform</text>
+    
+    <text x="0" y="90" font-size="24" fill="hsl(0, 0%, 63.9%)" class="dark-muted" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em; display: none;">Screenshot Enhancement and</text>
+    <text x="0" y="125" font-size="24" fill="hsl(0, 0%, 63.9%)" class="dark-muted" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em; display: none;">Visual Content Platform</text>
+    
+    <!-- Feature highlights -->
+    <g transform="translate(0, 180)">
+      <!-- Feature 1 -->
+      <g>
+        <rect width="24" height="24" rx="12" fill="hsl(0, 0%, 96.1%)" class="light-feature-icon"/>
+        <rect width="24" height="24" rx="12" fill="hsl(0, 0%, 14.9%)" class="dark-feature-icon" style="display: none;"/>
+        <text x="40" y="17" font-size="18" fill="hsl(0, 0%, 25%)" class="light-feature-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em;">Professional Backgrounds</text>
+        <text x="40" y="17" font-size="18" fill="hsl(0, 0%, 75%)" class="dark-feature-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em; display: none;">Professional Backgrounds</text>
+      </g>
+      
+      <!-- Feature 2 -->
+      <g transform="translate(0, 40)">
+        <rect width="24" height="24" rx="12" fill="hsl(0, 0%, 96.1%)" class="light-feature-icon"/>
+        <rect width="24" height="24" rx="12" fill="hsl(0, 0%, 14.9%)" class="dark-feature-icon" style="display: none;"/>
+        <text x="40" y="17" font-size="18" fill="hsl(0, 0%, 25%)" class="light-feature-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em;">Multiple Format Support</text>
+        <text x="40" y="17" font-size="18" fill="hsl(0, 0%, 75%)" class="dark-feature-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em; display: none;">Multiple Format Support</text>
+      </g>
+      
+      <!-- Feature 3 -->
+      <g transform="translate(0, 80)">
+        <rect width="24" height="24" rx="12" fill="hsl(0, 0%, 96.1%)" class="light-feature-icon"/>
+        <rect width="24" height="24" rx="12" fill="hsl(0, 0%, 14.9%)" class="dark-feature-icon" style="display: none;"/>
+        <text x="40" y="17" font-size="18" fill="hsl(0, 0%, 25%)" class="light-feature-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em;">Dark Mode Support</text>
+        <text x="40" y="17" font-size="18" fill="hsl(0, 0%, 75%)" class="dark-feature-text" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em; display: none;">Dark Mode Support</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- URL at bottom -->
+  <text x="600" y="560" font-size="16" fill="hsl(0, 0%, 45.1%)" text-anchor="middle" class="light-url" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em;">snapenhance.vercel.app</text>
+  <text x="600" y="560" font-size="16" fill="hsl(0, 0%, 63.9%)" text-anchor="middle" class="dark-url" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: 0.01em; display: none;">snapenhance.vercel.app</text>
+  
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .light-bg, .light-card, .light-logo-bg, .light-text, .light-accent, 
+      .light-muted, .light-feature-icon, .light-feature-text, .light-url, .light-grid {
+        display: none;
+      }
+      .dark-bg, .dark-card, .dark-logo-bg, .dark-text, .dark-accent, 
+      .dark-muted, .dark-feature-icon, .dark-feature-text, .dark-url, .dark-grid {
+        display: block;
+      }
+    }
+  </style>
+</svg>

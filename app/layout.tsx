@@ -4,6 +4,7 @@ import { Outfit } from 'next/font/google';
 import { Providers } from './providers';
 import { FloatingInfoButton } from '@/components/floating-info-button';
 import { SiteHeader } from '@/components/site-header';
+import { CookieConsent } from '@/components/cookie-consent';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({
             <SiteHeader />
             <main className="flex-1 flex flex-col">{children}</main>
             <FloatingInfoButton />
+            <CookieConsent />
           </div>
         </Providers>
       </body>

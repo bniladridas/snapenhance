@@ -74,8 +74,11 @@ SnapEnhance is a Screenshot Enhancement and Visual Content Platform designed for
 │   ├── android/          # Android app information
 │   ├── blog/             # Blog with helpful articles
 │   ├── changelog/        # Changelog page
+│   ├── contact/          # Contact form and information
+│   ├── cookies/          # Cookie & cache policy
 │   ├── ios/              # iOS app information
 │   ├── legal/            # Legal software information
+│   ├── license/          # License information
 │   ├── logo/             # Logo and assets page
 │   ├── og-image/         # Open Graph image information
 │   ├── privacy/          # Privacy policy page
@@ -105,13 +108,15 @@ The application is deployed on Vercel at [snapenhance.vercel.app](https://snapen
 - [Privacy Policy](/app/privacy/page.tsx)
 - [Terms of Service](/app/terms/page.tsx)
 - [Legal Software Information](/app/legal/page.tsx)
+- [Cookie & Cache Policy](/app/cookies/page.tsx)
+- [License](/app/license/page.tsx)
 - [AI/ML Information](/app/ai-ml/page.tsx)
+- [Contact Us](/app/contact/page.tsx)
 - [Blog](/app/blog/page.tsx)
 - [Android App](/app/android/page.tsx)
 - [iOS App](/app/ios/page.tsx)
 - [Social Media](/app/social/page.tsx)
 - [OG Image](/app/og-image/page.tsx)
-- [License](/app/license/page.tsx)
 - [Changelog](/CHANGELOG.md)
 
 SnapEnhance is legal software that is properly licensed and compliant with all applicable laws. All third-party libraries and components used in SnapEnhance are also properly licensed and used in accordance with their respective license agreements.

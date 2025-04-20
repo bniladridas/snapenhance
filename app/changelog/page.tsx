@@ -25,7 +25,7 @@ export default async function ChangelogPage() {
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
           <p>
-            Last updated: April 19, 2025
+            Last updated: April 20, 2025
           </p>
         </div>
       </div>

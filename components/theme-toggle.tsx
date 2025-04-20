@@ -9,7 +9,7 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className = '' }: ThemeToggleProps) {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch by only rendering after component is mounted
@@ -21,17 +21,21 @@ export function ThemeToggle({ className = '' }: ThemeToggleProps) {
     return null;
   }
 
+  // Use resolvedTheme which gives the actual theme currently being used
+  const currentTheme = resolvedTheme || theme;
+  const isDark = currentTheme === 'dark';
+
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(isDark ? 'light' : 'dark');
   };
 
   return (
     <button
       onClick={toggleTheme}
       className={`flex items-center gap-2 text-primary hover:underline ${className}`}
-      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+      title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
     >
-      {theme === 'dark' ? (
+      {isDark ? (
         <>
           <Moon className="h-3.5 w-3.5" />
           <span>Dark Mode</span>

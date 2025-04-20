@@ -2,6 +2,21 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
+## [1.2.0] - 2025-04-20
+
+### Added
+
+- Cookie consent banner for first-time visitors
+- Detailed Cookie & Cache Policy page
+- Contact page with form and contact information
+- Added links to new pages in the floating info panel
+
+### Fixed
+
+- Fixed theme toggle synchronization issues across the application
+- Improved theme state management using resolvedTheme for better accuracy
+- Fixed hydration errors related to client-side localStorage access
+
 ## [1.1.0] - 2025-04-20
 
 ### Added

@@ -182,6 +182,26 @@ export function FloatingInfoButton() {
 
             <div>
               <Link
+                href="/cookies"
+                className="text-primary hover:underline block"
+                onClick={() => setIsOpen(false)}
+              >
+                Cookies & Cache Policy
+              </Link>
+            </div>
+
+            <div>
+              <Link
+                href="/contact"
+                className="text-primary hover:underline block"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact Us
+              </Link>
+            </div>
+
+            <div>
+              <Link
                 href="https://github.com/bniladridas/snapenhance"
                 className="text-primary hover:underline flex items-center gap-1.5"
                 onClick={() => setIsOpen(false)}

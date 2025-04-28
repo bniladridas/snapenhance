@@ -23,6 +23,7 @@ All notable changes to SnapEnhance will be documented in this file.
 - Fixed time display issues with improved time zone handling
 - Optimized floating panel layout for smaller screens
 - Improved animations with smoother transitions
+- Fixed floating info button visibility on mobile devices
 
 ## [1.3.0] - 2025-04-28
 

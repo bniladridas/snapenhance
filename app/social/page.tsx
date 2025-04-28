@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 export default function SocialPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">SnapEnhance for Social Media</h1>
 
-        <div className="bg-muted/30 p-6 rounded-lg border border-border/30 mb-8">
+        <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm mb-8">
           <h2 className="text-lg font-medium mb-3">Elevate Your Social Media Presence</h2>
           <p className="text-muted-foreground">
             While platforms like Facebook connect people, SnapEnhance transforms your visual content to make those
@@ -91,7 +91,7 @@ export default function SocialPage() {
           <h2 className="text-lg font-medium">How SnapEnhance Complements Social Media Platforms</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-background border border-border rounded-md overflow-hidden">
+            <div className="bg-white/90 backdrop-blur-sm border border-border rounded-md overflow-hidden shadow-sm">
               <div className="p-4 bg-primary/5 border-b border-border">
                 <h3 className="text-base font-medium">Facebook</h3>
               </div>
@@ -117,7 +117,7 @@ export default function SocialPage() {
               </div>
             </div>
 
-            <div className="bg-background border border-border rounded-md overflow-hidden">
+            <div className="bg-white/90 backdrop-blur-sm border border-border rounded-md overflow-hidden shadow-sm">
               <div className="p-4 bg-primary/5 border-b border-border">
                 <h3 className="text-base font-medium">Instagram</h3>
               </div>
@@ -143,7 +143,7 @@ export default function SocialPage() {
               </div>
             </div>
 
-            <div className="bg-background border border-border rounded-md overflow-hidden">
+            <div className="bg-white/90 backdrop-blur-sm border border-border rounded-md overflow-hidden shadow-sm">
               <div className="p-4 bg-primary/5 border-b border-border">
                 <h3 className="text-base font-medium">Twitter/X</h3>
               </div>
@@ -169,7 +169,7 @@ export default function SocialPage() {
               </div>
             </div>
 
-            <div className="bg-background border border-border rounded-md overflow-hidden">
+            <div className="bg-white/90 backdrop-blur-sm border border-border rounded-md overflow-hidden shadow-sm">
               <div className="p-4 bg-primary/5 border-b border-border">
                 <h3 className="text-base font-medium">LinkedIn</h3>
               </div>
@@ -196,7 +196,7 @@ export default function SocialPage() {
             </div>
           </div>
 
-          <div className="mt-10 bg-muted/20 p-6 rounded-lg border border-border/30">
+          <div className="mt-10 bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-4">Success Story: Increasing Social Media Engagement</h2>
 
             <div className="flex flex-col md:flex-row gap-6">
@@ -212,7 +212,7 @@ export default function SocialPage() {
               </div>
 
               <div className="flex-1">
-                <div className="bg-background p-4 rounded-md border border-border">
+                <div className="bg-white p-4 rounded-md border border-border shadow-sm">
                   <h3 className="text-sm font-medium mb-2">Results After Using SnapEnhance</h3>
                   <ul className="text-xs text-muted-foreground space-y-2">
                     <li className="flex items-center gap-2">
@@ -257,7 +257,7 @@ export default function SocialPage() {
             </Link>
             <Link
               href="/blog"
-              className="bg-muted text-muted-foreground px-4 py-2 rounded-md text-sm font-medium"
+              className="bg-white/90 backdrop-blur-sm text-muted-foreground px-4 py-2 rounded-md text-sm font-medium shadow-sm"
             >
               Read Our Blog
             </Link>

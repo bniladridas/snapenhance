@@ -2,16 +2,16 @@
 
 export default function MobileResponsivenessPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Improving Mobile Responsiveness</h1>
 
-        <article className="prose prose-sm dark:prose-invert max-w-none">
+        <article className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <p className="text-muted-foreground mb-4">
             Published: April 28, 2025 | Author: SnapEnhance Team
           </p>
 
-          <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
+          <div className="mb-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Key Takeaways</h3>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
               <li>We've optimized the SnapEnhance interface for mobile devices</li>
@@ -23,21 +23,21 @@ export default function MobileResponsivenessPage() {
           </div>
 
           <p>
-            Today, we're excited to share the improvements we've made to SnapEnhance's mobile responsiveness. 
-            With more users accessing our platform from smartphones and tablets, ensuring a seamless experience 
+            Today, we're excited to share the improvements we've made to SnapEnhance's mobile responsiveness.
+            With more users accessing our platform from smartphones and tablets, ensuring a seamless experience
             across all devices has become a top priority.
           </p>
 
           <h2 className="text-lg font-medium mt-8 mb-4">The Challenge</h2>
 
           <p>
-            We received feedback that some users were experiencing horizontal scrolling issues on mobile devices, 
-            with certain UI elements extending beyond the viewport. Additionally, text sizes and spacing weren't 
+            We received feedback that some users were experiencing horizontal scrolling issues on mobile devices,
+            with certain UI elements extending beyond the viewport. Additionally, text sizes and spacing weren't
             optimally adjusted for smaller screens, making the interface less comfortable to use on mobile.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Common Mobile Issues</h3>
               <ul className="text-xs text-muted-foreground space-y-1 list-disc pl-4">
                 <li>Horizontal overflow causing side scrolling</li>
@@ -48,7 +48,7 @@ export default function MobileResponsivenessPage() {
               </ul>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Our Approach</h3>
               <ul className="text-xs text-muted-foreground space-y-1 list-disc pl-4">
                 <li>Implement responsive breakpoints with Tailwind CSS</li>
@@ -64,11 +64,11 @@ export default function MobileResponsivenessPage() {
 
           <h3 className="text-base font-medium mt-6 mb-2">1. Responsive Typography</h3>
           <p>
-            We implemented a responsive typography system that scales text sizes based on the viewport width. 
+            We implemented a responsive typography system that scales text sizes based on the viewport width.
             This ensures that text remains readable on all devices without manual zooming.
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs my-4">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs my-4 border border-border/30 shadow-sm">
 {`// Example of responsive typography in Tailwind CSS
 <h1 className="text-lg sm:text-xl font-medium">
   SnapEnhance
@@ -81,11 +81,11 @@ export default function MobileResponsivenessPage() {
 
           <h3 className="text-base font-medium mt-6 mb-2">2. Flexible Layouts</h3>
           <p>
-            We restructured our layout components to use flexible containers that adapt to different screen sizes. 
+            We restructured our layout components to use flexible containers that adapt to different screen sizes.
             This prevents content from overflowing and eliminates horizontal scrolling.
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs my-4">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs my-4 border border-border/30 shadow-sm">
 {`// Example of responsive layout container
 <div className="min-h-screen py-8 overflow-x-hidden w-full">
   <div className="container px-4 max-w-4xl mx-auto w-full">
@@ -96,11 +96,11 @@ export default function MobileResponsivenessPage() {
 
           <h3 className="text-base font-medium mt-6 mb-2">3. Responsive UI Components</h3>
           <p>
-            We updated all UI components to be responsive, with appropriate sizing and spacing for different devices. 
+            We updated all UI components to be responsive, with appropriate sizing and spacing for different devices.
             This includes buttons, input fields, navigation elements, and more.
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs my-4">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs my-4 border border-border/30 shadow-sm">
 {`// Example of responsive component
 <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
   <div className="w-full sm:w-auto">
@@ -114,7 +114,7 @@ export default function MobileResponsivenessPage() {
 
           <h3 className="text-base font-medium mt-6 mb-2">4. Touch-Friendly Interactions</h3>
           <p>
-            We increased the size of interactive elements to make them more touch-friendly on mobile devices. 
+            We increased the size of interactive elements to make them more touch-friendly on mobile devices.
             This improves usability and reduces the chance of accidental taps.
           </p>
 
@@ -168,7 +168,7 @@ export default function MobileResponsivenessPage() {
 
           <div className="border-t border-border/20 mt-8 pt-4">
             <p className="text-sm text-muted-foreground/80">
-              We're committed to providing the best possible experience for all users, regardless of their device. 
+              We're committed to providing the best possible experience for all users, regardless of their device.
               If you encounter any issues or have suggestions for improving our mobile interface, please don't hesitate to reach out.
             </p>
           </div>

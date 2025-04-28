@@ -2,16 +2,16 @@
 
 export default function TimeZoneDetectionPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Automatic Time Zone Detection</h1>
 
-        <article className="prose prose-sm dark:prose-invert max-w-none">
+        <article className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <p className="text-muted-foreground mb-4">
             Published: April 28, 2025 | Author: SnapEnhance Team
           </p>
 
-          <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
+          <div className="mb-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Key Takeaways</h3>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
               <li>We've implemented automatic time zone detection for accurate time display</li>
@@ -42,7 +42,7 @@ export default function TimeZoneDetectionPage() {
           </ul>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">How It Works</h3>
               <p className="text-xs text-muted-foreground">
                 When you first visit SnapEnhance, our system automatically detects your time zone using
@@ -51,7 +51,7 @@ export default function TimeZoneDetectionPage() {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">User Control</h3>
               <div className="text-xs text-muted-foreground">
                 <p>We believe in giving users control over their experience. That's why we've made it easy to:</p>
@@ -70,7 +70,7 @@ export default function TimeZoneDetectionPage() {
             Our time zone detection system uses a combination of browser APIs and server-side validation:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs my-4">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs my-4 border border-border/30 shadow-sm">
 {`// Client-side time zone detection
 const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 

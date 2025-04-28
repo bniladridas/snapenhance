@@ -4,13 +4,13 @@ import Link from 'next/link';
 
 export default function IOSPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">SnapEnhance for iOS</h1>
 
         <div className="flex flex-col md:flex-row gap-8 mb-8">
           <div className="flex-1">
-            <div className="bg-muted rounded-lg overflow-hidden shadow-md">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md">
               <div className="bg-primary/10 p-4 flex justify-center">
                 <img
                   src="/backgrounds/enhanced-image-quarterly-report.png"
@@ -99,7 +99,7 @@ export default function IOSPage() {
           <h2 className="text-lg font-medium">Seamless Apple Ecosystem Integration</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Share Sheet Extension</h3>
               <p className="text-xs text-muted-foreground">
                 Enhance screenshots directly from the iOS Share Sheet without even opening the app.
@@ -108,7 +108,7 @@ export default function IOSPage() {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Continuity Camera</h3>
               <p className="text-xs text-muted-foreground">
                 Use your iPhone as a camera for your Mac with Continuity Camera support.
@@ -117,7 +117,7 @@ export default function IOSPage() {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Universal Purchase</h3>
               <p className="text-xs text-muted-foreground">
                 Buy once and use on all your Apple devices. SnapEnhance is available as a universal
@@ -131,7 +131,7 @@ export default function IOSPage() {
             <h2 className="text-lg font-medium mb-4">Featured Background Styles</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="bg-background border border-border rounded-md overflow-hidden">
+              <div className="bg-white/90 backdrop-blur-sm border border-border rounded-md overflow-hidden shadow-sm">
                 <img
                   src="/backgrounds/enhanced-image-social-announcement.png"
                   alt="Social Announcement Style"
@@ -146,7 +146,7 @@ export default function IOSPage() {
               </div>
 
               {/* Placeholder for additional styles */}
-              <div className="bg-background border border-border rounded-md overflow-hidden opacity-60">
+              <div className="bg-white/90 backdrop-blur-sm border border-border rounded-md overflow-hidden opacity-60 shadow-sm">
                 <div className="w-full h-32 bg-gradient-to-r from-primary/10 to-primary/30 flex items-center justify-center">
                   <span className="text-xs text-muted-foreground">More styles coming soon</span>
                 </div>
@@ -158,7 +158,7 @@ export default function IOSPage() {
                 </div>
               </div>
 
-              <div className="bg-background border border-border rounded-md overflow-hidden opacity-60">
+              <div className="bg-white/90 backdrop-blur-sm border border-border rounded-md overflow-hidden opacity-60 shadow-sm">
                 <div className="w-full h-32 bg-gradient-to-br from-muted/50 to-muted flex items-center justify-center">
                   <span className="text-xs text-muted-foreground">More styles coming soon</span>
                 </div>
@@ -172,7 +172,7 @@ export default function IOSPage() {
             </div>
           </div>
 
-          <div className="mt-8 bg-muted/20 p-4 rounded-lg border border-border/30">
+          <div className="mt-8 bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">System Requirements</h2>
             <ul className="text-sm text-muted-foreground space-y-1">
               <li>• iOS 15.0 or later</li>
@@ -184,7 +184,7 @@ export default function IOSPage() {
             </ul>
           </div>
 
-          <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10">
+          <div className="mt-8 p-4 bg-white/90 backdrop-blur-sm rounded-lg border border-primary/10 shadow-sm">
             <h2 className="text-base font-medium mb-2">Privacy Focus</h2>
             <p className="text-sm text-muted-foreground">
               At SnapEnhance, we take your privacy seriously. Our iOS app:

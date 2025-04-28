@@ -2,12 +2,12 @@
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">SnapEnhance Blog</h1>
 
         <div className="mb-8 flex flex-col gap-4">
-          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/time-zone-detection" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Automatic Time Zone Detection</h2>
               <p className="text-xs text-muted-foreground">Published: April 28, 2025</p>
@@ -17,7 +17,7 @@ export default function BlogPage() {
             </a>
           </div>
 
-          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/mobile-responsiveness" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Improving Mobile Responsiveness</h2>
               <p className="text-xs text-muted-foreground">Published: April 28, 2025</p>
@@ -27,7 +27,7 @@ export default function BlogPage() {
             </a>
           </div>
 
-          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/fixing-gemini-image-generation" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Solving Gemini API Image Generation Challenges</h2>
               <p className="text-xs text-muted-foreground">Published: April 28, 2025</p>
@@ -37,7 +37,7 @@ export default function BlogPage() {
             </a>
           </div>
 
-          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/testing-gemini-api" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Testing Google Gemini API Integration</h2>
               <p className="text-xs text-muted-foreground">Published: April 20, 2025</p>
@@ -47,7 +47,7 @@ export default function BlogPage() {
             </a>
           </div>
 
-          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/production-build-optimization" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Troubleshooting Production Build Optimization</h2>
               <p className="text-xs text-muted-foreground">Published: April 20, 2025</p>
@@ -57,7 +57,7 @@ export default function BlogPage() {
             </a>
           </div>
 
-          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="#mobile-access" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">How to Access Your Web Application on a Mobile Phone</h2>
               <p className="text-xs text-muted-foreground">Published: April 19, 2025</p>
@@ -75,7 +75,7 @@ export default function BlogPage() {
             Published: April 19, 2025 | Author: SnapEnhance Team
           </p>
 
-          <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
+          <div className="mb-6 p-4 bg-white/90 backdrop-blur-sm rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Featured Examples: Professional Background Enhancements</h3>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col md:flex-row gap-4 items-center">
@@ -135,7 +135,7 @@ export default function BlogPage() {
             For Next.js applications, modify your package.json scripts:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
             {`"scripts": {
   "dev": "next dev -H 0.0.0.0",
   "start": "next start -H 0.0.0.0"
@@ -150,13 +150,13 @@ export default function BlogPage() {
 
           <p>On macOS or Linux, open Terminal and run:</p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
             ifconfig | grep "inet " | grep -v 127.0.0.1
           </pre>
 
           <p>On Windows, open Command Prompt and run:</p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
             ipconfig
           </pre>
 
@@ -168,7 +168,7 @@ export default function BlogPage() {
             Start your development server with <code>npm run dev</code>, then open a browser on your mobile device and navigate to:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
             http://YOUR_IP_ADDRESS:3000
           </pre>
 
@@ -185,13 +185,13 @@ export default function BlogPage() {
 
           <h4 className="text-sm font-medium mt-4 mb-1">Step 1: Install ngrok</h4>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
             npm install -g ngrok
           </pre>
 
           <h4 className="text-sm font-medium mt-4 mb-1">Step 2: Start Your Development Server</h4>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
             npm run dev
           </pre>
 
@@ -199,7 +199,7 @@ export default function BlogPage() {
 
           <p>In a separate terminal window, run:</p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
             ngrok http 3000
           </pre>
 
@@ -254,7 +254,7 @@ export default function BlogPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-md border border-border/30 shadow-sm">
               <h4 className="text-sm font-medium mb-2">Mobile Screenshot Workflow</h4>
               <ol className="list-decimal pl-5 space-y-1 text-sm text-muted-foreground">
                 <li>Take a screenshot on your mobile device</li>
@@ -266,7 +266,7 @@ export default function BlogPage() {
               </ol>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-md border border-border/30 shadow-sm">
               <h4 className="text-sm font-medium mb-2">Perfect Use Cases</h4>
               <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
                 <li><strong>App Reviews:</strong> Enhance screenshots of mobile apps you're reviewing</li>

@@ -4,16 +4,16 @@
 
 export default function ProductionBuildOptimizationPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Troubleshooting Production Build Optimization</h1>
 
-        <article className="prose prose-sm dark:prose-invert max-w-none">
+        <article className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <p className="text-muted-foreground mb-4">
             Published: April 20, 2025 | Author: SnapEnhance Team
           </p>
 
-          <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
+          <div className="mb-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Key Takeaways</h3>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
               <li>Production builds require different optimization strategies than development builds</li>
@@ -41,7 +41,7 @@ export default function ProductionBuildOptimizationPage() {
           <h2 className="text-lg font-medium mt-8 mb-4">Common Production Build Issues</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Large Bundle Sizes</h3>
               <p className="text-xs text-muted-foreground">
                 Production builds with excessive JavaScript can slow down initial page loads. This is especially problematic
@@ -49,7 +49,7 @@ export default function ProductionBuildOptimizationPage() {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Image Optimization Issues</h3>
               <p className="text-xs text-muted-foreground">
                 Unoptimized images can significantly impact performance. For SnapEnhance, where image processing is central
@@ -57,7 +57,7 @@ export default function ProductionBuildOptimizationPage() {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Environment Variable Configuration</h3>
               <p className="text-xs text-muted-foreground">
                 Incorrect handling of environment variables, especially API keys like our Gemini API key, can lead to
@@ -65,7 +65,7 @@ export default function ProductionBuildOptimizationPage() {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Rendering Inconsistencies</h3>
               <p className="text-xs text-muted-foreground">
                 Differences between server-side rendering (SSR), static site generation (SSG), and client-side rendering can
@@ -88,7 +88,7 @@ export default function ProductionBuildOptimizationPage() {
             analyzer to get insights:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Install the bundle analyzer
 npm install --save-dev @next/bundle-analyzer
 
@@ -117,7 +117,7 @@ ANALYZE=true npm run build`}
             components that weren't needed on initial load:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Before
 import { HeavyComponent } from '@/components/heavy-component';
 
@@ -144,7 +144,7 @@ const HeavyComponent = dynamic(
             We ensured proper tree shaking by using ES modules and avoiding side effects:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Bad: Importing the entire library
 import * as LucideIcons from 'lucide-react';
 
@@ -152,7 +152,7 @@ import * as LucideIcons from 'lucide-react';
 import { Upload, Download, Image as ImageIcon } from 'lucide-react';`}
           </pre>
 
-          <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
+          <div className="bg-white p-4 rounded-lg border border-primary/10 shadow-sm my-6">
             <h3 className="text-sm font-medium mb-2">Solution Highlight</h3>
             <p className="text-xs text-muted-foreground">
               By implementing these bundle optimization techniques, we reduced our initial JavaScript payload by 42%,
@@ -173,7 +173,7 @@ import { Upload, Download, Image as ImageIcon } from 'lucide-react';`}
             We replaced standard <code>&lt;img&gt;</code> tags with Next.js <code>Image</code> component for static images:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Before
 <img src="/backgrounds/og.png" alt="OG Image" />
 
@@ -199,7 +199,7 @@ import Image from 'next/image';
             For our dynamically generated images using Canvas, we implemented quality controls:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Optimize canvas.toDataURL with quality parameter
 const dataUrl = canvas.toDataURL('image/png', 0.85); // Adjust quality as needed`}
           </pre>
@@ -208,7 +208,7 @@ const dataUrl = canvas.toDataURL('image/png', 0.85); // Adjust quality as needed
             We also added error handling to ensure the generated data URLs were valid:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`try {
   const dataUrl = canvas.toDataURL('image/png', 0.85);
 
@@ -231,7 +231,7 @@ const dataUrl = canvas.toDataURL('image/png', 0.85); // Adjust quality as needed
             We implemented proper loading states to prevent layout shifts and improve perceived performance:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`<div className="relative aspect-video bg-muted rounded-md overflow-hidden">
   {isLoading ? (
     <div className="absolute inset-0 flex items-center justify-center">
@@ -263,7 +263,7 @@ const dataUrl = canvas.toDataURL('image/png', 0.85); // Adjust quality as needed
             We followed Next.js conventions for environment variables:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// .env.local (for development, not committed to version control)
 GEMINI_API_KEY=your_development_api_key
 
@@ -279,7 +279,7 @@ GEMINI_API_KEY=your_production_api_key
             We were careful to distinguish between server-side and client-side environment variables:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Server-side only (not exposed to the browser)
 GEMINI_API_KEY=your_api_key
 
@@ -298,7 +298,7 @@ NEXT_PUBLIC_APP_VERSION=1.1.0`}
             We added validation to ensure environment variables were properly loaded:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// In app/api/visual-research/route.ts
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {
@@ -307,7 +307,7 @@ if (!apiKey) {
 }`}
           </pre>
 
-          <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
+          <div className="bg-white p-4 rounded-lg border border-primary/10 shadow-sm my-6">
             <h3 className="text-sm font-medium mb-2">Troubleshooting Tip</h3>
             <p className="text-xs text-muted-foreground">
               If your API integration works in development but fails in production, double-check that you've set the
@@ -329,7 +329,7 @@ if (!apiKey) {
             We identified which pages could be statically generated and which needed server-side rendering:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Static page (blog post)
 // app/blog/testing-gemini-api/page.tsx
 export const dynamic = 'force-static';
@@ -345,7 +345,7 @@ export const dynamic = 'force-dynamic';`}
             We carefully chose between client and server components based on their needs:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Server Component (no 'use client' directive)
 // Ideal for content-heavy pages with minimal interactivity
 export default function BlogPage() {
@@ -374,7 +374,7 @@ export default function ImageEnhancer() {
             We encountered hydration errors when the server-rendered HTML didn't match the client-side React tree. Here's how we fixed them:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Problem: Different content on server vs. client
 function Component() {
   // This will cause hydration errors because Date.now() is different
@@ -407,7 +407,7 @@ function Component() {
             For certain API routes that needed to be fast but didn't require the full Node.js runtime:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// app/api/simple-endpoint/route.ts
 export const runtime = 'edge';
 
@@ -423,7 +423,7 @@ export async function GET() {
             We configured Vercel's image optimization service for our static images:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// next.config.js
 module.exports = {
   images: {
@@ -442,7 +442,7 @@ module.exports = {
             We implemented appropriate caching headers for different types of content:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// For static assets that rarely change
 export async function GET() {
   return new Response('Static content', {
@@ -489,7 +489,7 @@ export async function GET() {
             but in production, users would see either "Received non-JSON response from server" or "Request timed out. Please try again."
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// The error occurred when trying to parse the API response
 try {
   const data = await response.json();

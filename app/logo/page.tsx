@@ -61,13 +61,13 @@ export default function LogoPage() {
   };
 
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">SnapEnhance Logo</h1>
 
         <div className="space-y-8">
           {/* Logo Preview */}
-          <div className="flex flex-col items-center justify-center p-8 border border-border/20 rounded-lg">
+          <div className="flex flex-col items-center justify-center p-8 border border-border/20 rounded-lg bg-white/90 backdrop-blur-sm shadow-sm">
             <div className="p-8 rounded-lg bg-white">
               <svg
                 ref={svgRef}
@@ -103,7 +103,7 @@ export default function LogoPage() {
           </div>
 
           {/* Download Options */}
-          <div className="space-y-4">
+          <div className="space-y-4 bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium">Download Options</h2>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

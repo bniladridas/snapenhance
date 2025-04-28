@@ -4,16 +4,16 @@ import Link from 'next/link';
 
 export default function TestingGeminiAPIBlogPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Testing Google Gemini API Integration</h1>
 
-        <article className="prose prose-sm dark:prose-invert max-w-none">
+        <article className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <p className="text-muted-foreground mb-4">
             Published: April 20, 2025 | Author: SnapEnhance Team
           </p>
 
-          <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
+          <div className="mb-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Key Takeaways</h3>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
               <li>We've integrated Google's Gemini API to power our visual research feature</li>
@@ -63,7 +63,7 @@ export default function TestingGeminiAPIBlogPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">check-dependencies.sh</h3>
               <p className="text-xs text-muted-foreground">
                 This script checks if the necessary tools (like <code>jq</code> for JSON parsing) are installed on the system.
@@ -71,7 +71,7 @@ export default function TestingGeminiAPIBlogPage() {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">test-gemini-api.sh</h3>
               <p className="text-xs text-muted-foreground">
                 This script tests a specific Gemini model with the provided API key. It sends a simple request and displays
@@ -80,7 +80,7 @@ export default function TestingGeminiAPIBlogPage() {
             </div>
           </div>
 
-          <div className="bg-muted/30 p-4 rounded-md border border-border/30 mb-6">
+          <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm mb-6">
             <h3 className="text-sm font-medium mb-2">test-gemini-models.sh</h3>
             <p className="text-xs text-muted-foreground">
               This script tests multiple Gemini models to see which ones are available with the provided API key. It provides
@@ -97,7 +97,7 @@ export default function TestingGeminiAPIBlogPage() {
             Here's a simplified version of our <code>test-gemini-models.sh</code> script:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`#!/bin/bash
 
 # Check if API key is provided
@@ -179,7 +179,7 @@ fi`}
             </li>
           </ol>
 
-          <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
+          <div className="bg-white p-4 rounded-lg border border-primary/10 shadow-sm my-6">
             <h3 className="text-sm font-medium mb-2">Security Note</h3>
             <p className="text-xs text-muted-foreground">
               Always keep your API keys secure. Never commit them to version control or share them publicly.

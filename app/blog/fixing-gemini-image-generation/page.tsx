@@ -4,16 +4,16 @@ import Link from 'next/link';
 
 export default function FixingGeminiImageGenerationPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Solving Gemini API Image Generation Challenges</h1>
 
-        <article className="prose prose-sm max-w-none">
+        <article className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <p className="text-muted-foreground mb-4">
             Published: April 28, 2025 | Author: SnapEnhance Team
           </p>
 
-          <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
+          <div className="mb-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Key Takeaways</h3>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
               <li>We successfully implemented image generation using Google's Gemini API</li>
@@ -35,7 +35,7 @@ export default function FixingGeminiImageGenerationPage() {
             The API logs showed responses like this:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`{
   "candidates": [
     {
@@ -83,7 +83,7 @@ export default function FixingGeminiImageGenerationPage() {
             Here's how we implemented the direct API call approach:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Use direct REST API call instead of the SDK
 const model = 'gemini-2.0-flash-exp-image-generation';
 const enhancedPrompt = \`Generate a detailed image of \${prompt}\`;
@@ -128,7 +128,7 @@ const result = await apiResponse.json();`}
             straightforward prompts like:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`"Generate a detailed image of a new building"`}
           </pre>
 
@@ -138,7 +138,7 @@ const result = await apiResponse.json();`}
             With the direct API approach, we received proper responses containing image data:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`{
   "candidates": [
     {
@@ -164,7 +164,7 @@ const result = await apiResponse.json();`}
             We then extracted the image data and returned it to the client:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Process the response
 if (result.candidates && result.candidates.length > 0) {
   const candidate = result.candidates[0];
@@ -189,7 +189,7 @@ if (result.candidates && result.candidates.length > 0) {
             if the first attempt doesn't return image data:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// Try with a different prompt if the first one didn't work
 if (!imageBuffer) {
   console.log("First attempt didn't return image data, trying with a different prompt...");
@@ -232,7 +232,7 @@ if (!imageBuffer) {
             If both attempts fail, we provide a placeholder image with an informative error message:
           </p>
 
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+          <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs border border-border/30 shadow-sm">
 {`// If we still don't have an image, return a placeholder
 if (!imageBuffer) {
   const fallbackMsg = "No image data received from Gemini API. Check your API quota, prompt, or try again later.";
@@ -253,7 +253,7 @@ if (!imageBuffer) {
           <h2 className="text-lg font-medium mt-8 mb-4">Key Lessons Learned</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">SDK Limitations</h3>
               <p className="text-sm text-muted-foreground">
                 The JavaScript SDK might not fully support all experimental features like image generation. For cutting-edge
@@ -261,7 +261,7 @@ if (!imageBuffer) {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Request Format Matters</h3>
               <p className="text-sm text-muted-foreground">
                 The exact format of the request payload is critical for experimental features. Even small deviations from
@@ -269,7 +269,7 @@ if (!imageBuffer) {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Testing in Isolation</h3>
               <p className="text-sm text-muted-foreground">
                 Testing different configurations in isolation helps identify working approaches that can then be integrated
@@ -277,7 +277,7 @@ if (!imageBuffer) {
               </p>
             </div>
 
-            <div className="bg-muted/30 p-4 rounded-md border border-border/30">
+            <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Robust Error Handling</h3>
               <p className="text-sm text-muted-foreground">
                 Always implement fallback mechanisms and graceful degradation for AI features. This ensures a good user
@@ -299,7 +299,7 @@ if (!imageBuffer) {
             <li><strong>Brand Consistency:</strong> Generate visuals that match your brand's style and color scheme</li>
           </ul>
 
-          <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
+          <div className="bg-white p-4 rounded-lg border border-primary/10 shadow-sm my-6">
             <h3 className="text-sm font-medium mb-2">Implementation Note</h3>
             <p className="text-xs text-muted-foreground">
               When implementing AI features, always be prepared to adapt your approach as the technology evolves.

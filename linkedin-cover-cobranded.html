@@ -21,6 +21,10 @@
                 rgb(230, 240, 255) 50%,
                 rgb(220, 255, 240) 100%);
             overflow: hidden;
+            /* Force background to be visible */
+            -webkit-print-color-adjust: exact !important;
+            color-adjust: exact !important;
+            print-color-adjust: exact !important;
         }
 
         .logo-container {
@@ -178,7 +182,11 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script>
         document.getElementById('downloadDesktopBtn').addEventListener('click', function() {
-            html2canvas(document.getElementById('desktop-cover')).then(function(canvas) {
+            html2canvas(document.getElementById('desktop-cover'), {
+                backgroundColor: null,  // Ensure transparent background
+                useCORS: true,          // Enable CORS for images
+                scale: 2                // Higher quality
+            }).then(function(canvas) {
                 const link = document.createElement('a');
                 link.download = 'cobranded-linkedin-cover-desktop.png';
                 link.href = canvas.toDataURL('image/png');
@@ -187,7 +195,11 @@
         });
 
         document.getElementById('downloadMobileBtn').addEventListener('click', function() {
-            html2canvas(document.getElementById('mobile-cover')).then(function(canvas) {
+            html2canvas(document.getElementById('mobile-cover'), {
+                backgroundColor: null,  // Ensure transparent background
+                useCORS: true,          // Enable CORS for images
+                scale: 2                // Higher quality
+            }).then(function(canvas) {
                 const link = document.createElement('a');
                 link.download = 'cobranded-linkedin-cover-mobile.png';
                 link.href = canvas.toDataURL('image/png');

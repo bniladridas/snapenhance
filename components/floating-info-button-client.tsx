@@ -42,24 +42,28 @@ export function FloatingInfoButtonClient() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-4 right-4 z-50 sm:block" style={{ display: 'block' }}>
       {/* Info panel - Optimized for smaller screens */}
       {isOpen && (
         <div
-          className={`absolute bottom-12 right-0 w-52 max-h-[80vh] ${isDelta ? 'bg-white/98' : 'bg-background/98'} backdrop-blur-sm rounded-md shadow-sm p-2.5 ${isDelta ? 'border border-blue-100' : 'border border-border/10'} text-xs animate-in fade-in slide-in-from-bottom-3 duration-150`}
-          style={{ maxHeight: 'calc(100vh - 100px)' }}
+          className={`absolute bottom-14 md:bottom-12 right-0 w-64 md:w-52 max-h-[80vh] ${isDelta ? 'bg-white/98' : 'bg-background/98'} backdrop-blur-sm rounded-md shadow-md p-3 md:p-2.5 ${isDelta ? 'border border-blue-100' : 'border border-border/10'} text-xs animate-in fade-in slide-in-from-bottom-3 duration-150`}
+          style={{
+            maxHeight: 'calc(100vh - 100px)',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+          }}
         >
-          <div className="flex justify-between items-center mb-2 sticky top-0 z-10">
+          <div className="flex justify-between items-center mb-3 sticky top-0 z-10 pb-1 border-b border-gray-100/50">
             <h3 className={`text-xs font-medium ${isDelta ? 'text-blue-600' : 'text-muted-foreground/90'}`}>Information</h3>
             <button
               onClick={toggleOpen}
-              className={`${isDelta ? 'text-blue-400 hover:text-blue-600' : 'text-muted-foreground/60 hover:text-muted-foreground/90'} transition-colors`}
+              className={`${isDelta ? 'text-blue-400 hover:text-blue-600' : 'text-muted-foreground/60 hover:text-muted-foreground/90'} transition-colors p-1`}
+              aria-label="Close information panel"
             >
-              <X className="h-3.5 w-3.5" />
+              <X className="h-4 w-4 md:h-3.5 md:w-3.5" />
             </button>
           </div>
 
-          <div className="space-y-1.5 overflow-y-auto pr-1" style={{ maxHeight: 'calc(100vh - 150px)' }}>
+          <div className="space-y-1.5 overflow-y-auto pr-1 -mr-1 pb-1" style={{ maxHeight: 'calc(100vh - 150px)', WebkitOverflowScrolling: 'touch' }}>
             {isDelta && (
               <div className="mb-2 p-1.5 bg-blue-50/50 rounded-md border border-blue-100/50">
                 <h4 className="text-[10px] font-medium text-blue-700 mb-0.5">Delta Mode</h4>
@@ -306,10 +310,10 @@ export function FloatingInfoButtonClient() {
         </div>
       )}
 
-      {/* Floating button */}
+      {/* Floating button - Enhanced for mobile */}
       <button
         onClick={toggleOpen}
-        className={`h-8 w-8 rounded-full flex items-center justify-center shadow-sm transition-all duration-150 ${
+        className={`h-10 w-10 md:h-8 md:w-8 rounded-full flex items-center justify-center shadow-md transition-all duration-150 ${
           isOpen
             ? isDelta
               ? 'bg-white/95 backdrop-blur-sm border border-blue-200 text-blue-500 rotate-90'
@@ -318,8 +322,12 @@ export function FloatingInfoButtonClient() {
               ? 'bg-white/95 backdrop-blur-sm border border-blue-200 text-blue-400 hover:text-blue-600'
               : 'bg-background/95 backdrop-blur-sm border border-border/20 text-muted-foreground/70 hover:text-muted-foreground'
         }`}
+        style={{
+          boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+          WebkitTapHighlightColor: 'transparent'
+        }}
       >
-        <Info className="h-4 w-4" />
+        <Info className="h-5 w-5 md:h-4 md:w-4" />
       </button>
     </div>
   );

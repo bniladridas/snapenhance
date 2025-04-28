@@ -37,7 +37,7 @@ export function CookieConsent() {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom-5 duration-300">
-      <div className="mx-auto max-w-4xl bg-background/95 backdrop-blur-sm rounded-lg border border-border/20 shadow-lg p-4 md:p-6">
+      <div className="mx-auto max-w-4xl bg-white/90 backdrop-blur-sm rounded-lg border border-border/30 shadow-sm p-4 md:p-6">
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
           <div className="space-y-2">
             <h3 className="text-base font-medium">Cookie & Cache Notice</h3>

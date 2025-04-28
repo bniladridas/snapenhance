@@ -53,12 +53,12 @@ export function TimeZoneSelector({ onClose, onSelect }: TimeZoneSelectorProps) {
 
     // If we couldn't get the list, use our popular list
     const timezones = allTimezones.length > 0 ? allTimezones : popular;
-    
+
     // Make sure detected timezone is in the list
     if (userTimezone && !timezones.includes(userTimezone)) {
       timezones.unshift(userTimezone);
     }
-    
+
     setCommonTimezones(timezones);
     setFilteredTimezones(timezones);
   }, []);
@@ -71,10 +71,10 @@ export function TimeZoneSelector({ onClose, onSelect }: TimeZoneSelectorProps) {
     }
 
     const query = searchQuery.toLowerCase();
-    const filtered = commonTimezones.filter(tz => 
+    const filtered = commonTimezones.filter(tz =>
       tz.toLowerCase().includes(query)
     );
-    
+
     setFilteredTimezones(filtered);
   }, [searchQuery, commonTimezones]);
 
@@ -91,50 +91,50 @@ export function TimeZoneSelector({ onClose, onSelect }: TimeZoneSelectorProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-background rounded-lg shadow-lg max-w-md w-full max-h-[80vh] flex flex-col">
+      <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg max-w-md w-full max-h-[80vh] flex flex-col border border-border/30">
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-lg font-medium">Select Your Time Zone</h2>
-          <button 
+          <button
             onClick={onClose}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <X size={18} />
           </button>
         </div>
-        
+
         <div className="p-4 border-b">
           <p className="text-sm text-muted-foreground mb-4">
-            We've detected your time zone as <span className="font-medium">{formatTimezone(detectedTimezone)}</span>. 
+            We've detected your time zone as <span className="font-medium">{formatTimezone(detectedTimezone)}</span>.
             You can confirm this or select a different time zone.
           </p>
-          
+
           <div className="relative mb-4">
             <input
               type="text"
               placeholder="Search time zones..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full p-2 border rounded-md text-sm"
+              className="w-full p-2 border border-border/50 rounded-md text-sm bg-white/80 focus:bg-white focus:border-primary/30 focus:outline-none transition-colors"
             />
           </div>
         </div>
-        
+
         <div className="overflow-y-auto flex-1 p-2">
           <div className="space-y-1">
             {filteredTimezones.map((tz) => (
               <div
                 key={tz}
                 className={`p-2 rounded-md cursor-pointer text-sm ${
-                  selectedTimezone === tz 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'hover:bg-muted'
+                  selectedTimezone === tz
+                    ? 'bg-primary text-primary-foreground'
+                    : 'hover:bg-white hover:shadow-sm'
                 }`}
                 onClick={() => setSelectedTimezone(tz)}
               >
                 {formatTimezone(tz)}
               </div>
             ))}
-            
+
             {filteredTimezones.length === 0 && (
               <div className="p-4 text-center text-muted-foreground">
                 No time zones match your search
@@ -142,7 +142,7 @@ export function TimeZoneSelector({ onClose, onSelect }: TimeZoneSelectorProps) {
             )}
           </div>
         </div>
-        
+
         <div className="p-4 border-t flex justify-end gap-2">
           <Button variant="outline" onClick={onClose}>
             Cancel

@@ -5,14 +5,14 @@ export default function LicensePage() {
     <div className="min-h-screen py-8 bg-background">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">License</h1>
-        
+
         <div className="prose prose-sm dark:prose-invert max-w-none">
           <h2 className="text-lg font-medium mb-4">MIT License</h2>
-          
+
           <p className="text-muted-foreground mb-6">
             Copyright (c) 2025 SnapEnhance
           </p>
-          
+
           <p className="text-muted-foreground mb-4">
             Permission is hereby granted, free of charge, to any person obtaining a copy
             of this software and associated documentation files (the "Software"), to deal
@@ -21,12 +21,12 @@ export default function LicensePage() {
             copies of the Software, and to permit persons to whom the Software is
             furnished to do so, subject to the following conditions:
           </p>
-          
+
           <p className="text-muted-foreground mb-4">
             The above copyright notice and this permission notice shall be included in all
             copies or substantial portions of the Software.
           </p>
-          
+
           <p className="text-muted-foreground mb-4">
             THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
             IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -36,14 +36,14 @@ export default function LicensePage() {
             OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             SOFTWARE.
           </p>
-          
+
           <div className="mt-8 p-4 bg-muted/20 rounded-lg border border-border/30">
             <h3 className="text-base font-medium mb-2">What This Means</h3>
             <p className="text-sm text-muted-foreground">
               The MIT License is a permissive license that is short and to the point. It lets people do almost anything they want with your project, like making and distributing closed source versions, as long as they include the original license and copyright notice in any copy of the software or substantial portion of it.
             </p>
           </div>
-          
+
           <div className="mt-6 p-4 bg-muted/20 rounded-lg border border-border/30">
             <h3 className="text-base font-medium mb-2">Third-Party Licenses</h3>
             <p className="text-sm text-muted-foreground">
@@ -58,9 +58,9 @@ export default function LicensePage() {
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 19, 2025</p>
+          <p>Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

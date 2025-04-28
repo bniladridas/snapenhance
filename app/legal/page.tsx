@@ -133,7 +133,7 @@ export default function LegalPage() {
           <div className="flex justify-center mb-2">
             <TimeSyncDisplay />
           </div>
-          <p>Last updated: April 19, 2025</p>
+          <p>Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

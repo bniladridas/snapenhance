@@ -10,7 +10,7 @@ export default function FixingGeminiImageGenerationPage() {
 
         <article className="prose prose-sm max-w-none">
           <p className="text-muted-foreground mb-4">
-            Published: April 20, 2025 | Author: SnapEnhance Team
+            Published: April 28, 2025 | Author: SnapEnhance Team
           </p>
 
           <div className="mb-6 p-4 bg-muted/50 rounded-lg border border-border/50">
@@ -331,7 +331,7 @@ if (!imageBuffer) {
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 20, 2025</p>
+          <p>Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

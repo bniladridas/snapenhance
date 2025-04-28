@@ -8,9 +8,29 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+            <a href="/blog/time-zone-detection" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Automatic Time Zone Detection</h2>
+              <p className="text-xs text-muted-foreground">Published: April 28, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Discover how our new time zone detection feature enhances your experience with accurate time display and synchronization across different regions.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+            <a href="/blog/mobile-responsiveness" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Improving Mobile Responsiveness</h2>
+              <p className="text-xs text-muted-foreground">Published: April 28, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Learn how we optimized the SnapEnhance interface for mobile devices, fixing layout issues and enhancing the user experience on smaller screens.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
             <a href="/blog/fixing-gemini-image-generation" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Solving Gemini API Image Generation Challenges</h2>
-              <p className="text-xs text-muted-foreground">Published: April 20, 2025</p>
+              <p className="text-xs text-muted-foreground">Published: April 28, 2025</p>
               <p className="text-sm text-muted-foreground mt-2">
                 Discover how we solved the challenges with Google's Gemini API image generation by using direct REST API calls instead of the JavaScript SDK.
               </p>
@@ -274,7 +294,7 @@ export default function BlogPage() {
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 20, 2025</p>
+          <p>Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

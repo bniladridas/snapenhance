@@ -103,6 +103,15 @@ export function DeltaAiGenerator() {
           <textarea
             value={promptInput}
             onChange={(e) => setPromptInput(e.target.value)}
+            onKeyDown={(e) => {
+              // Submit on Enter key (without Shift key for new lines)
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (promptInput.trim() && !isGenerating) {
+                  generateImage();
+                }
+              }
+            }}
             placeholder="Describe the image you want to generate..."
             className="w-full p-3 border border-gray-200 rounded-md text-sm resize-none h-24 focus:outline-none focus:ring-1 focus:ring-blue-200 transition-all duration-300"
           />
@@ -139,7 +148,7 @@ export function DeltaAiGenerator() {
         </div>
 
         {/* Character Count */}
-        <div className="flex justify-end">
+        <div className="flex justify-end items-center">
           <div className="text-xs text-gray-500">
             {promptInput.length}/1000
           </div>

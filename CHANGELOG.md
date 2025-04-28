@@ -2,42 +2,45 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
-## [1.4.0] - 2025-04-30
+## [1.4.0] - 2025-04-28
+> Note: Version 1.3.0 was skipped in the versioning sequence.
 
 ### Added
 
 - Introduced Delta mode with a dedicated interface for AI image generation
+- Implemented AI image generation using Google's Gemini API
 - Added smooth animations for mode switching and image generation
 - Implemented automatic time zone detection based on user's device
 - Enhanced floating info panel with Delta mode information
+- Added blog posts about solving Gemini API image generation challenges and mobile responsiveness
+- Enhanced visual content capabilities with AI-generated images
+- Added viewport meta tag optimizations for mobile devices
 
 ### Changed
 
 - Completely redesigned Delta interface for a cleaner, more focused experience
+- Improved mobile responsiveness across the entire application
 - Optimized UI for smaller screens and improved responsiveness
 - Updated founder information with GitHub profile photo
 - Refined typography and visual elements for better harmony
-
-### Fixed
-
-- Fixed time display issues with improved time zone handling
-- Optimized floating panel layout for smaller screens
-- Improved animations with smoother transitions
-- Fixed floating info button visibility on mobile devices
-
-## [1.3.0] - 2025-04-28
-
-### Added
-
-- Implemented AI image generation using Google's Gemini API
-- Added blog post about solving Gemini API image generation challenges
-- Enhanced visual content capabilities with AI-generated images
+- Enhanced typography scaling for better readability on mobile devices
+- Reorganized header components for better mobile layout
+- Improved search bar and input components for touch interfaces
 
 ### Fixed
 
 - Fixed Gemini API image generation by switching to direct REST API calls
+- Fixed time display issues with improved time zone handling
+- Optimized floating panel layout for smaller screens
+- Improved animations with smoother transitions
+- Fixed floating info button visibility on mobile devices
 - Improved error handling and fallback mechanisms for AI features
 - Enhanced prompt engineering for better image generation results
+- Fixed horizontal scrolling issues on mobile devices
+- Optimized header layout for mobile screens
+- Fixed overflow issues in the main container
+- Adjusted component spacing for better mobile experience
+- Improved mode toggle component for smaller screens
 
 ## [1.2.0] - 2025-04-20
 

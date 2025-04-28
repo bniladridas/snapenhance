@@ -185,7 +185,7 @@ export default function AndroidPage() {
         </div>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>SnapEnhance for Android | Last updated: April 19, 2025</p>
+          <p>SnapEnhance for Android | Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

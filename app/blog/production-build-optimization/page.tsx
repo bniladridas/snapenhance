@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+
 
 export default function ProductionBuildOptimizationPage() {
   return (
@@ -681,7 +681,7 @@ export async function POST(request: NextRequest) {
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 20, 2025</p>
+          <p>Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

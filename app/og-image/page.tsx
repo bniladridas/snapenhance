@@ -215,7 +215,7 @@ export default function OGImagePage() {
         </div>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>SnapEnhance Open Graph Image | Last updated: April 19, 2025</p>
+          <p>SnapEnhance Open Graph Image | Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

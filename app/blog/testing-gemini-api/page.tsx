@@ -26,14 +26,14 @@ export default function TestingGeminiAPIBlogPage() {
           <h2 className="text-lg font-medium mt-8 mb-4">Integrating AI into SnapEnhance</h2>
 
           <p>
-            As part of our commitment to providing the best screenshot enhancement experience, we've integrated Google's 
-            powerful Gemini API into SnapEnhance. This integration powers our visual research feature, which helps users 
+            As part of our commitment to providing the best screenshot enhancement experience, we've integrated Google's
+            powerful Gemini API into SnapEnhance. This integration powers our visual research feature, which helps users
             get design insights and recommendations for their visual content.
           </p>
 
           <p>
-            However, working with third-party APIs can sometimes be challenging. API endpoints might change, models can be 
-            deprecated, and service disruptions can occur. To ensure a smooth experience for our users, we've developed a 
+            However, working with third-party APIs can sometimes be challenging. API endpoints might change, models can be
+            deprecated, and service disruptions can occur. To ensure a smooth experience for our users, we've developed a
             set of shell scripts that help us test and troubleshoot our Gemini API integration.
           </p>
 
@@ -52,7 +52,7 @@ export default function TestingGeminiAPIBlogPage() {
           </ul>
 
           <p>
-            To address these challenges, we created a set of shell scripts that allow us to quickly test our API integration 
+            To address these challenges, we created a set of shell scripts that allow us to quickly test our API integration
             and identify any issues.
           </p>
 
@@ -66,7 +66,7 @@ export default function TestingGeminiAPIBlogPage() {
             <div className="bg-muted/30 p-4 rounded-md border border-border/30">
               <h3 className="text-sm font-medium mb-2">check-dependencies.sh</h3>
               <p className="text-xs text-muted-foreground">
-                This script checks if the necessary tools (like <code>jq</code> for JSON parsing) are installed on the system. 
+                This script checks if the necessary tools (like <code>jq</code> for JSON parsing) are installed on the system.
                 If they're not, it guides the user through the installation process.
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function TestingGeminiAPIBlogPage() {
             <div className="bg-muted/30 p-4 rounded-md border border-border/30">
               <h3 className="text-sm font-medium mb-2">test-gemini-api.sh</h3>
               <p className="text-xs text-muted-foreground">
-                This script tests a specific Gemini model with the provided API key. It sends a simple request and displays 
+                This script tests a specific Gemini model with the provided API key. It sends a simple request and displays
                 the response, helping to verify that the API key is working correctly.
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function TestingGeminiAPIBlogPage() {
           <div className="bg-muted/30 p-4 rounded-md border border-border/30 mb-6">
             <h3 className="text-sm font-medium mb-2">test-gemini-models.sh</h3>
             <p className="text-xs text-muted-foreground">
-              This script tests multiple Gemini models to see which ones are available with the provided API key. It provides 
+              This script tests multiple Gemini models to see which ones are available with the provided API key. It provides
               a summary of working models and instructions for updating the application code.
             </p>
             <p className="text-xs text-muted-foreground mt-2">
@@ -124,11 +124,11 @@ echo "========================================"
 for MODEL in "\${MODELS[@]}"; do
   echo "Testing model: \${MODEL}"
   ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/\${MODEL}:generateContent?key=\${API_KEY}"
-  
+
   RESPONSE=$(curl -s -X POST "\${ENDPOINT}" \\
     -H "Content-Type: application/json" \\
     -d '{"contents":[{"parts":[{"text":"Hello, this is a test message."}]}]}')
-  
+
   # Check if the response contains an error
   if echo "$RESPONSE" | grep -q "error"; then
     echo "❌ Model \${MODEL} is not available"
@@ -141,7 +141,7 @@ for MODEL in "\${MODELS[@]}"; do
     # Add to working models array
     WORKING_MODELS+=("\${MODEL}")
   fi
-  
+
   echo "----------------------------------------"
 done
 
@@ -154,7 +154,7 @@ else
   for MODEL in "\${WORKING_MODELS[@]}"; do
     echo "  ✅ $MODEL"
   done
-  
+
   echo ""
   echo "To update your application, edit app/api/visual-research/route.ts:"
   echo "const model = genAI.getGenerativeModel({ model: \"MODEL_NAME_HERE\" });"
@@ -182,7 +182,7 @@ fi`}
           <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 my-6">
             <h3 className="text-sm font-medium mb-2">Security Note</h3>
             <p className="text-xs text-muted-foreground">
-              Always keep your API keys secure. Never commit them to version control or share them publicly. 
+              Always keep your API keys secure. Never commit them to version control or share them publicly.
               We store our API keys in environment variables that are not included in our repository.
             </p>
           </div>
@@ -190,14 +190,14 @@ fi`}
           <h2 className="text-lg font-medium mt-8 mb-4">Fallback Mechanism</h2>
 
           <p>
-            Even with thorough testing, API calls can sometimes fail in production. To ensure a smooth user experience, 
-            we've implemented a fallback mechanism in our visual research feature. If the Gemini API call fails for any reason, 
+            Even with thorough testing, API calls can sometimes fail in production. To ensure a smooth user experience,
+            we've implemented a fallback mechanism in our visual research feature. If the Gemini API call fails for any reason,
             we provide a simulated response based on the user's query.
           </p>
 
           <p>
-            This approach ensures that users always get some value from the feature, even if there are temporary issues with 
-            the API. The simulated responses are designed to provide useful information related to the user's query, though 
+            This approach ensures that users always get some value from the feature, even if there are temporary issues with
+            the API. The simulated responses are designed to provide useful information related to the user's query, though
             they're not as personalized or comprehensive as the AI-generated responses.
           </p>
 
@@ -218,8 +218,8 @@ fi`}
           <h2 className="text-lg font-medium mt-8 mb-4">Conclusion</h2>
 
           <p>
-            Integrating AI capabilities into applications like SnapEnhance can greatly enhance the user experience, but it also 
-            comes with challenges. By creating robust testing scripts and implementing proper error handling, we've been able to 
+            Integrating AI capabilities into applications like SnapEnhance can greatly enhance the user experience, but it also
+            comes with challenges. By creating robust testing scripts and implementing proper error handling, we've been able to
             provide a reliable visual research feature powered by Google's Gemini API.
           </p>
 
@@ -236,7 +236,7 @@ fi`}
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 20, 2025</p>
+          <p>Last updated: April 28, 2025</p>
         </div>
       </div>
     </div>

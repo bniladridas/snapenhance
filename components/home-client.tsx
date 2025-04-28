@@ -41,26 +41,28 @@ export function HomeClient() {
   const isDelta = mode === 'delta';
 
   return (
-    <div className={`min-h-screen py-8 ${isDelta ? 'bg-white' : 'bg-background'} transition-colors duration-500`}>
-      <div className="container px-4 max-w-4xl mx-auto">
+    <div className={`min-h-screen py-8 ${isDelta ? 'bg-white' : 'bg-background'} transition-colors duration-500 overflow-x-hidden w-full`}>
+      <div className="container px-4 max-w-4xl mx-auto w-full">
         {!isDelta && (
-          // Original SnapEnhance header
-          <div className="flex justify-between items-center mb-8">
+          // Responsive SnapEnhance header
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
             <div className="flex items-center gap-2">
               <img
                 src="/logo.svg"
                 alt="SnapEnhance Logo"
-                className="w-10 h-10"
+                className="w-8 h-8 sm:w-10 sm:h-10"
               />
-              <h1 className="text-xl font-medium tracking-tight">
+              <h1 className="text-lg sm:text-xl font-medium tracking-tight">
                 SnapEnhance
               </h1>
             </div>
-            <div className="flex items-center gap-4">
-              <ModeToggle variant="switch" className="mr-4" />
-              <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link>
-              <Link href="/ai-ml" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI/ML</Link>
-              <Link href="/legal" className="text-sm text-muted-foreground hover:text-primary transition-colors">Legal</Link>
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+              <ModeToggle variant="switch" className="mr-2" />
+              <div className="flex items-center gap-3">
+                <Link href="/blog" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link>
+                <Link href="/ai-ml" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">AI/ML</Link>
+                <Link href="/legal" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Legal</Link>
+              </div>
             </div>
           </div>
         )}

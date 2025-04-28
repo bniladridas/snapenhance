@@ -43,15 +43,15 @@ export function SiteHeaderClient() {
   }
 
   return (
-    <div className={`border-b ${isDelta ? 'border-blue-100' : 'border-border/10'}`}>
-      <div className="container px-4 max-w-4xl mx-auto">
-        <div className="flex justify-between items-center h-14">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+    <div className={`border-b ${isDelta ? 'border-blue-100' : 'border-border/10'} w-full overflow-x-hidden`}>
+      <div className="container px-4 max-w-4xl mx-auto w-full">
+        <div className="flex flex-wrap justify-between items-center py-3 sm:h-14">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <Link href="/" className="flex items-center gap-1 sm:gap-2 hover:opacity-90 transition-opacity">
               <img
                 src={isDelta ? "/images/delta-logo.svg" : "/logo.svg"}
                 alt={isDelta ? "Delta Logo" : "SnapEnhance Logo"}
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 onError={(e) => {
                   // Fallback if delta logo doesn't exist
                   if (isDelta) {
@@ -59,7 +59,7 @@ export function SiteHeaderClient() {
                   }
                 }}
               />
-              <h1 className={`text-base font-medium tracking-tight ${isDelta ? 'text-blue-600' : ''}`}>
+              <h1 className={`text-sm sm:text-base font-medium tracking-tight ${isDelta ? 'text-blue-600' : ''}`}>
                 {isDelta ? 'Delta' : 'SnapEnhance'}
               </h1>
             </Link>
@@ -69,37 +69,40 @@ export function SiteHeaderClient() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <ModeToggle variant="switch" className="mr-2" />
+
+          <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4 mt-2 sm:mt-0 w-full sm:w-auto">
+            <ModeToggle variant="switch" className="mr-1 sm:mr-2" />
 
             <div className="hidden lg:block">
               <FounderBadge size="sm" showText={false} />
             </div>
 
-            <Link
-              href="/blog"
-              className={`text-sm ${pathname.startsWith('/blog')
-                ? (isDelta ? 'text-blue-600' : 'text-primary')
-                : (isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-muted-foreground hover:text-primary')} transition-colors`}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/ai-ml"
-              className={`text-sm ${pathname === '/ai-ml'
-                ? (isDelta ? 'text-blue-600' : 'text-primary')
-                : (isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-muted-foreground hover:text-primary')} transition-colors`}
-            >
-              AI/ML
-            </Link>
-            <Link
-              href="/legal"
-              className={`text-sm ${pathname === '/legal'
-                ? (isDelta ? 'text-blue-600' : 'text-primary')
-                : (isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-muted-foreground hover:text-primary')} transition-colors`}
-            >
-              Legal
-            </Link>
+            <div className="flex items-center gap-2 sm:gap-4">
+              <Link
+                href="/blog"
+                className={`text-xs sm:text-sm ${pathname.startsWith('/blog')
+                  ? (isDelta ? 'text-blue-600' : 'text-primary')
+                  : (isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-muted-foreground hover:text-primary')} transition-colors`}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/ai-ml"
+                className={`text-xs sm:text-sm ${pathname === '/ai-ml'
+                  ? (isDelta ? 'text-blue-600' : 'text-primary')
+                  : (isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-muted-foreground hover:text-primary')} transition-colors`}
+              >
+                AI/ML
+              </Link>
+              <Link
+                href="/legal"
+                className={`text-xs sm:text-sm ${pathname === '/legal'
+                  ? (isDelta ? 'text-blue-600' : 'text-primary')
+                  : (isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-muted-foreground hover:text-primary')} transition-colors`}
+              >
+                Legal
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -23,17 +23,37 @@ export async function POST(req: NextRequest) {
 
     // Helper to create a text placeholder image for errors or when API is unavailable
     const generatePlaceholderImage = async (text: string, isError = false) => {
-      // Create a basic placeholder with text
-      const encodedText = encodeURIComponent(text.substring(0, 50) + (text.length > 50 ? '...' : ''));
-      const bgColor = isError ? 'ff6b6b' : '3b82f6';
-      const placeholderUrl = `https://placehold.co/800x600/${bgColor}/ffffff?text=${encodedText}`;
+      try {
+        // Use local sample images instead of external placeholder service
+        const fs = require('fs');
+        const path = require('path');
 
-      console.log("Using basic placeholder:", placeholderUrl);
+        // Choose a random sample image
+        const sampleIndex = Math.floor(Math.random() * 3);
+        const samplePath = path.join(process.cwd(), 'public', 'images',
+          sampleIndex === 0 ? 'delta-sample.png' :
+          sampleIndex === 1 ? 'delta-sample-1.png' : 'delta-sample-2.png');
 
-      const placeholderResponse = await fetch(placeholderUrl);
-      const placeholderBlob = await placeholderResponse.blob();
+        console.log(`Using local sample image: ${samplePath}`);
 
-      return Buffer.from(await placeholderBlob.arrayBuffer());
+        // Read the file
+        const imageBuffer = fs.readFileSync(samplePath);
+        return imageBuffer;
+      } catch (error) {
+        console.error("Error reading sample image:", error);
+
+        // Fallback to basic placeholder with text
+        const encodedText = encodeURIComponent(text.substring(0, 50) + (text.length > 50 ? '...' : ''));
+        const bgColor = isError ? 'ff6b6b' : '3b82f6';
+        const placeholderUrl = `https://placehold.co/800x600/${bgColor}/ffffff?text=${encodedText}`;
+
+        console.log("Using basic placeholder:", placeholderUrl);
+
+        const placeholderResponse = await fetch(placeholderUrl);
+        const placeholderBlob = await placeholderResponse.blob();
+
+        return Buffer.from(await placeholderBlob.arrayBuffer());
+      }
     };
 
     try {

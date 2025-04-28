@@ -181,6 +181,26 @@ export function FloatingInfoButtonClient() {
 
             <div>
               <Link
+                href="/blog/time-zone-detection"
+                className={`${isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-primary'} hover:underline block`}
+                onClick={() => setIsOpen(false)}
+              >
+                Time Zone Detection
+              </Link>
+            </div>
+
+            <div>
+              <Link
+                href="/blog/mobile-responsiveness"
+                className={`${isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-primary'} hover:underline block`}
+                onClick={() => setIsOpen(false)}
+              >
+                Mobile Responsiveness
+              </Link>
+            </div>
+
+            <div>
+              <Link
                 href="/blog/fixing-gemini-image-generation"
                 className={`${isDelta ? 'text-blue-500 hover:text-blue-700' : 'text-primary'} hover:underline block`}
                 onClick={() => setIsOpen(false)}

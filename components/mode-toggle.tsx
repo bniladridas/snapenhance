@@ -46,16 +46,16 @@ export function ModeToggle({ className = '', variant = 'button', style }: ModeTo
 
   if (variant === 'switch') {
     return (
-      <div className={`flex items-center gap-2 ${className}`} style={style}>
-        <span className={`text-sm ${mode === 'snapenhance' ? 'font-medium' : 'text-muted-foreground'} transition-colors duration-300`}>
+      <div className={`flex items-center gap-1 sm:gap-2 ${className}`} style={style}>
+        <span className={`text-xs sm:text-sm ${mode === 'snapenhance' ? 'font-medium' : 'text-muted-foreground'} transition-colors duration-300`}>
           SnapEnhance
         </span>
         <Switch
           checked={mode === 'delta'}
           onCheckedChange={handleToggle}
-          className="data-[state=checked]:bg-blue-600 transition-all duration-300"
+          className="data-[state=checked]:bg-blue-600 transition-all duration-300 scale-90 sm:scale-100"
         />
-        <span className={`text-sm ${mode === 'delta' ? 'font-medium' : 'text-muted-foreground'} transition-colors duration-300`}>
+        <span className={`text-xs sm:text-sm ${mode === 'delta' ? 'font-medium' : 'text-muted-foreground'} transition-colors duration-300`}>
           Delta
         </span>
       </div>

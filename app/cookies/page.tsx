@@ -134,7 +134,7 @@ export default function CookiesPage() {
 
           <div className="mt-6 border-t border-border/10 pt-6">
             <p className="text-sm text-muted-foreground">
-              Policy last updated: April 20, 2025
+              Policy last updated: April 28, 2025
             </p>
             <p className="text-sm text-muted-foreground mt-1">
               Your preferences last updated: {lastUpdated || 'Not set yet'}

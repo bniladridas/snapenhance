@@ -8,6 +8,16 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
+            <a href="/blog/fixing-gemini-image-generation" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Solving Gemini API Image Generation Challenges</h2>
+              <p className="text-xs text-muted-foreground">Published: April 20, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Discover how we solved the challenges with Google's Gemini API image generation by using direct REST API calls instead of the JavaScript SDK.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-muted/30 p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors">
             <a href="/blog/testing-gemini-api" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Testing Google Gemini API Integration</h2>
               <p className="text-xs text-muted-foreground">Published: April 20, 2025</p>

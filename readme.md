@@ -17,7 +17,7 @@ SnapEnhance is a Screenshot Enhancement and Visual Content Platform designed for
 - **Multiple Formats**: Support for PNG, JPG, and WEBP image formats
 - **Template System**: Various background styles to choose from
 - **Social Media Presets**: Optimized formats for different social media platforms
-- **Dark Mode Support**: Comfortable viewing experience in any lighting condition
+- **Delta Mode**: Alternative interface focused on AI image generation
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
 
 ## Technology Stack

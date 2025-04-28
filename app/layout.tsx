@@ -5,6 +5,7 @@ import { Providers } from './providers';
 import { FloatingInfoButton } from '@/components/floating-info-button';
 import { SiteHeader } from '@/components/site-header';
 import { CookieConsent } from '@/components/cookie-consent';
+import { FirstVisitTimeZone } from '@/components/first-visit-time-zone';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -48,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
       </head>
@@ -59,6 +60,7 @@ export default function RootLayout({
             <main className="flex-1 flex flex-col">{children}</main>
             <FloatingInfoButton />
             <CookieConsent />
+            <FirstVisitTimeZone />
           </div>
         </Providers>
       </body>

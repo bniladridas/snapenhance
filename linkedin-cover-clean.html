@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapEnhance LinkedIn Cover</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .cover-container {
+            position: relative;
+            width: 1584px;
+            height: 396px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .dark-cover {
+            background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+            color: white;
+        }
+        
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 0 200px;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            letter-spacing: -0.5px;
+        }
+        
+        p {
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mobile-cover {
+            width: 1128px;
+            height: 191px;
+        }
+        
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background: #005582;
+        }
+        
+        .theme-toggle {
+            background: #6c757d;
+        }
+        
+        .theme-toggle:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button id="toggleTheme" class="theme-toggle">Toggle Dark/Light</button>
+        <button id="downloadDesktopBtn">Download Desktop Cover</button>
+        <button id="downloadMobileBtn">Download Mobile Cover</button>
+    </div>
+
+    <div id="desktop-cover" class="cover-container">
+        <div class="content">
+            <h1>SnapEnhance</h1>
+            <p>Screenshot Enhancement and Visual Content Platform</p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; margin-bottom: 40px; text-align: center; font-size: 24px; font-weight: bold;">
+        Mobile Preview (smaller dimensions)
+    </div>
+    
+    <div id="mobile-cover" class="cover-container mobile-cover">
+        <div class="content">
+            <h1 style="font-size: 36px;">SnapEnhance</h1>
+            <p style="font-size: 18px;">Screenshot Enhancement and Visual Content Platform</p>
+        </div>
+    </div>
+    
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('toggleTheme').addEventListener('click', function() {
+            document.getElementById('desktop-cover').classList.toggle('dark-cover');
+            document.getElementById('mobile-cover').classList.toggle('dark-cover');
+        });
+        
+        document.getElementById('downloadDesktopBtn').addEventListener('click', function() {
+            html2canvas(document.getElementById('desktop-cover')).then(function(canvas) {
+                const link = document.createElement('a');
+                link.download = 'snapenhance-linkedin-cover-desktop.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        });
+        
+        document.getElementById('downloadMobileBtn').addEventListener('click', function() {
+            html2canvas(document.getElementById('mobile-cover')).then(function(canvas) {
+                const link = document.createElement('a');
+                link.download = 'snapenhance-linkedin-cover-mobile.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>

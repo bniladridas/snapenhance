@@ -2,6 +2,42 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
+## [1.4.0] - 2025-04-30
+
+### Added
+
+- Introduced Delta mode with a dedicated interface for AI image generation
+- Added smooth animations for mode switching and image generation
+- Implemented automatic time zone detection based on user's device
+- Enhanced floating info panel with Delta mode information
+
+### Changed
+
+- Completely redesigned Delta interface for a cleaner, more focused experience
+- Optimized UI for smaller screens and improved responsiveness
+- Updated founder information with GitHub profile photo
+- Refined typography and visual elements for better harmony
+
+### Fixed
+
+- Fixed time display issues with improved time zone handling
+- Optimized floating panel layout for smaller screens
+- Improved animations with smoother transitions
+
+## [1.3.0] - 2025-04-28
+
+### Added
+
+- Implemented AI image generation using Google's Gemini API
+- Added blog post about solving Gemini API image generation challenges
+- Enhanced visual content capabilities with AI-generated images
+
+### Fixed
+
+- Fixed Gemini API image generation by switching to direct REST API calls
+- Improved error handling and fallback mechanisms for AI features
+- Enhanced prompt engineering for better image generation results
+
 ## [1.2.0] - 2025-04-20
 
 ### Added
@@ -13,8 +49,8 @@ All notable changes to SnapEnhance will be documented in this file.
 
 ### Fixed
 
-- Fixed theme toggle synchronization issues across the application
-- Improved theme state management using resolvedTheme for better accuracy
+- Simplified UI by removing dark mode functionality
+- Improved mode state management for better consistency
 - Fixed hydration errors related to client-side localStorage access
 
 ## [1.1.0] - 2025-04-20

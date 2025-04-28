@@ -3,24 +3,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { Download, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useTheme } from 'next-themes';
 
 export default function LogoPage() {
   const [copied, setCopied] = useState(false);
-  const { theme, resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const svgRef = useRef<SVGSVGElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  // Avoid hydration mismatch by only rendering after component is mounted
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Toggle between light and dark theme
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   // Function to download the logo as PNG
   const downloadPNG = (size: number) => {
@@ -73,15 +60,6 @@ export default function LogoPage() {
     });
   };
 
-  // Don't render until mounted to avoid hydration mismatch
-  if (!mounted) {
-    return null;
-  }
-
-  // Use resolvedTheme which gives the actual theme currently being used
-  const currentTheme = resolvedTheme || theme;
-  const isDark = currentTheme === 'dark';
-
   return (
     <div className="min-h-screen py-8 bg-background">
       <div className="container px-4 max-w-3xl mx-auto">
@@ -90,7 +68,7 @@ export default function LogoPage() {
         <div className="space-y-8">
           {/* Logo Preview */}
           <div className="flex flex-col items-center justify-center p-8 border border-border/20 rounded-lg">
-            <div className={`p-8 rounded-lg ${isDark ? 'bg-black' : 'bg-white'}`}>
+            <div className="p-8 rounded-lg bg-white">
               <svg
                 ref={svgRef}
                 width="128"
@@ -101,9 +79,9 @@ export default function LogoPage() {
               >
                 <style>
                   {`
-                    .bg { fill: ${isDark ? 'hsl(0, 0%, 3.9%)' : 'hsl(0, 0%, 100%)'}; }
-                    .text { fill: ${isDark ? 'hsl(0, 0%, 98%)' : 'hsl(0, 0%, 3.9%)'}; }
-                    .accent { fill: ${isDark ? 'hsl(0, 0%, 14.9%)' : 'hsl(0, 0%, 96.1%)'}; }
+                    .bg { fill: hsl(0, 0%, 100%); }
+                    .text { fill: hsl(0, 0%, 3.9%); }
+                    .accent { fill: hsl(0, 0%, 96.1%); }
                   `}
                 </style>
 
@@ -121,11 +99,7 @@ export default function LogoPage() {
               </svg>
             </div>
 
-            <div className="mt-4">
-              <Button onClick={toggleTheme} variant="outline" size="sm" className="text-xs">
-                Toggle {isDark ? 'Light' : 'Dark'} Theme
-              </Button>
-            </div>
+            {/* Theme toggle removed */}
           </div>
 
           {/* Download Options */}

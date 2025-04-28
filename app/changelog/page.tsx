@@ -19,13 +19,13 @@ export default async function ChangelogPage() {
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Changelog</h1>
 
-        <div className="prose prose-sm dark:prose-invert max-w-none">
+        <div className="prose prose-sm max-w-none">
           <div dangerouslySetInnerHTML={{ __html: changelogHtml }} />
         </div>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
           <p>
-            Last updated: April 20, 2025
+            Last updated: April 28, 2025
           </p>
         </div>
       </div>

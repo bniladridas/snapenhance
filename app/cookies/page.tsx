@@ -50,7 +50,7 @@ export default function CookiesPage() {
           <h3 className="text-base font-medium mt-4 mb-2">Essential</h3>
           <ul className="list-disc pl-5 space-y-1">
             <li>
-              <strong>Theme Preferences</strong>: We store your preferred theme (light/dark/system) to provide a consistent experience.
+              <strong>Mode Preferences</strong>: We store your preferred mode (SnapEnhance/Delta) to provide a consistent experience.
             </li>
             <li>
               <strong>Session Management</strong>: We use cookies to maintain your session state while using the application.

@@ -121,8 +121,8 @@ export default function AndroidPage() {
               <h3 className="text-sm font-medium mb-2">Material Design Interface</h3>
               <p className="text-xs text-muted-foreground">
                 SnapEnhance follows Android's Material Design guidelines, providing a familiar and intuitive interface
-                for Realme and other Android users. The app adapts to your device's theme settings, supporting both
-                light and dark modes.
+                for Realme and other Android users. The app features a clean, light interface designed for optimal
+                visibility and usability.
               </p>
             </div>
           </div>
@@ -163,9 +163,9 @@ export default function AndroidPage() {
                   <span className="text-xs text-muted-foreground">More styles coming soon</span>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-sm font-medium">Dark Mode</h3>
+                  <h3 className="text-sm font-medium">Professional Mode</h3>
                   <p className="text-xs text-muted-foreground">
-                    Eye-friendly dark background for code snippets and night viewing
+                    Clean, professional background for code snippets and presentations
                   </p>
                 </div>
               </div>

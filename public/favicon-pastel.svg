@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pastel gradient background with rounded corners -->
+  <rect width="32" height="32" rx="8" fill="url(#pastelGradient)"/>
+  
+  <!-- Stylized S and E letters with darker text for contrast -->
+  <g fill="#333333" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 600;">
+    <text x="8" y="22" font-size="18">S</text>
+    <text x="17" y="22" font-size="18">E</text>
+  </g>
+  
+  <!-- Subtle accent element with semi-transparent white -->
+  <rect x="8" y="24" width="16" height="2" rx="1" fill="rgba(255, 255, 255, 0.7)"/>
+  
+  <!-- Define the pastel gradient -->
+  <defs>
+    <linearGradient id="pastelGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffdce4" /> <!-- Light pink -->
+      <stop offset="50%" stop-color="#e6f0ff" /> <!-- Light blue -->
+      <stop offset="100%" stop-color="#dcfff0" /> <!-- Light mint green -->
+    </linearGradient>
+  </defs>
+</svg>

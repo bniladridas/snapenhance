@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="48" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pastel gradient background with rounded corners -->
+  <rect width="160" height="48" rx="12" fill="url(#pastelGradient)"/>
+  
+  <!-- Stylized S and E letters with darker text for contrast -->
+  <g fill="#333333" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 600;">
+    <text x="30" y="32" font-size="24">S</text>
+    <text x="50" y="32" font-size="24">E</text>
+  </g>
+  
+  <!-- Full name next to the logo -->
+  <g fill="#333333" style="font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;">
+    <text x="80" y="32" font-size="18">SnapEnhance</text>
+  </g>
+  
+  <!-- Subtle accent element with semi-transparent white -->
+  <rect x="30" y="36" width="100" height="3" rx="1.5" fill="rgba(255, 255, 255, 0.7)"/>
+  
+  <!-- Define the pastel gradient -->
+  <defs>
+    <linearGradient id="pastelGradient" x1="0" y1="0" x2="160" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffdce4" /> <!-- Light pink -->
+      <stop offset="50%" stop-color="#e6f0ff" /> <!-- Light blue -->
+      <stop offset="100%" stop-color="#dcfff0" /> <!-- Light mint green -->
+    </linearGradient>
+  </defs>
+</svg>

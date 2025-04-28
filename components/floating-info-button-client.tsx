@@ -46,7 +46,7 @@ export function FloatingInfoButtonClient() {
       {/* Info panel - Optimized for smaller screens */}
       {isOpen && (
         <div
-          className={`absolute bottom-14 md:bottom-12 right-0 w-64 md:w-52 max-h-[80vh] ${isDelta ? 'bg-white/98' : 'bg-background/98'} backdrop-blur-sm rounded-md shadow-md p-3 md:p-2.5 ${isDelta ? 'border border-blue-100' : 'border border-border/10'} text-xs animate-in fade-in slide-in-from-bottom-3 duration-150`}
+          className={`absolute bottom-14 md:bottom-12 right-0 w-64 md:w-52 max-h-[80vh] bg-white/95 backdrop-blur-sm rounded-md shadow-md p-3 md:p-2.5 ${isDelta ? 'border border-blue-100' : 'border border-border/10'} text-xs animate-in fade-in slide-in-from-bottom-3 duration-150`}
           style={{
             maxHeight: 'calc(100vh - 100px)',
             boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
@@ -337,10 +337,10 @@ export function FloatingInfoButtonClient() {
           isOpen
             ? isDelta
               ? 'bg-white/95 backdrop-blur-sm border border-blue-200 text-blue-500 rotate-90'
-              : 'bg-background/95 backdrop-blur-sm border border-border/20 text-primary/80 rotate-90'
+              : 'bg-white/95 backdrop-blur-sm border border-border/20 text-primary/80 rotate-90'
             : isDelta
               ? 'bg-white/95 backdrop-blur-sm border border-blue-200 text-blue-400 hover:text-blue-600'
-              : 'bg-background/95 backdrop-blur-sm border border-border/20 text-muted-foreground/70 hover:text-muted-foreground'
+              : 'bg-white/95 backdrop-blur-sm border border-border/20 text-muted-foreground/70 hover:text-muted-foreground'
         }`}
         style={{
           boxShadow: '0 2px 10px rgba(0,0,0,0.1)',

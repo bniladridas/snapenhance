@@ -186,10 +186,10 @@ export function VisualResearchBar() {
   };
 
   return (
-    <div className="relative w-full max-w-xl mx-auto">
+    <div className="relative w-full max-w-xl mx-auto z-[90]">
       <form onSubmit={handleSearch} className="relative">
         <div className="relative flex items-center">
-          <div className="absolute left-2 sm:left-3 text-muted-foreground/50">
+          <div className="absolute left-2 sm:left-3 text-primary/70">
             <Search className="h-3 w-3 sm:h-4 sm:w-4" />
           </div>
 
@@ -200,14 +200,14 @@ export function VisualResearchBar() {
             onChange={(e) => setQuery(e.target.value)}
             onFocus={handleInputFocus}
             placeholder="Ask AI about visual design..."
-            className="w-full bg-background/50 border border-border/30 rounded-md py-1.5 sm:py-2 pl-7 sm:pl-9 pr-10 sm:pr-12 text-xs sm:text-sm focus:ring-1 focus:ring-primary/20 focus:border-primary/30 transition-all"
+            className="w-full bg-white/90 backdrop-blur-sm border border-border/50 rounded-md py-1.5 sm:py-2 pl-7 sm:pl-9 pr-10 sm:pr-12 text-xs sm:text-sm focus:ring-1 focus:ring-primary/30 focus:border-primary/40 shadow-sm transition-all"
           />
 
           {query && (
             <button
               type="button"
               onClick={clearSearch}
-              className="absolute right-10 sm:right-12 text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+              className="absolute right-10 sm:right-12 text-primary/60 hover:text-primary/90 transition-colors"
             >
               <X className="h-3 w-3 sm:h-4 sm:w-4" />
             </button>
@@ -217,13 +217,13 @@ export function VisualResearchBar() {
             type="submit"
             size="sm"
             variant="ghost"
-            className="absolute right-1 h-6 sm:h-7 px-2 sm:px-2.5 text-[10px] sm:text-xs"
+            className="absolute right-1 h-6 sm:h-7 px-2 sm:px-2.5 text-[10px] sm:text-xs bg-primary/10 hover:bg-primary/20"
             disabled={isSearching || !query.trim()}
           >
             {isSearching ? (
-              <Loader2 className="h-3 w-3 sm:h-3.5 sm:w-3.5 animate-spin" />
+              <Loader2 className="h-3 w-3 sm:h-3.5 sm:w-3.5 animate-spin text-primary" />
             ) : (
-              <span className="text-primary/70 font-medium">AI</span>
+              <span className="text-primary font-medium">AI</span>
             )}
           </Button>
         </div>
@@ -232,27 +232,27 @@ export function VisualResearchBar() {
       {isResultVisible && searchResult && (
         <>
           {/* Semi-transparent backdrop to prevent interaction with elements below */}
-          <div className="fixed inset-0 bg-black/5 z-40" onClick={() => setIsResultVisible(false)} />
+          <div className="fixed inset-0 bg-black/5 z-[100]" onClick={() => setIsResultVisible(false)} />
           <div
             ref={resultRef}
-            className="absolute top-full left-0 right-0 mt-1 bg-background/95 backdrop-blur-sm border border-border/30 rounded-md shadow-md p-3 sm:p-4 z-50 max-h-[70vh] sm:max-h-[60vh] overflow-y-auto"
+            className="absolute top-full left-0 right-0 mt-1 bg-white/95 backdrop-blur-md border border-border/50 rounded-md shadow-md p-3 sm:p-4 z-[101] max-h-[70vh] sm:max-h-[60vh] overflow-y-auto"
           >
           <div className="flex justify-between items-center mb-2">
             <div>
-              <h3 className="text-[10px] sm:text-xs font-medium">AI Visual Research Results</h3>
+              <h3 className="text-[10px] sm:text-xs font-medium text-foreground">AI Visual Research Results</h3>
               {isSimulated && (
-                <p className="text-[8px] sm:text-[10px] text-amber-500/70 mt-0.5">Using simulated response (API unavailable)</p>
+                <p className="text-[8px] sm:text-[10px] text-amber-500/90 mt-0.5">Using simulated response (API unavailable)</p>
               )}
             </div>
             <button
               onClick={() => setIsResultVisible(false)}
-              className="text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+              className="text-muted-foreground/70 hover:text-foreground transition-colors"
             >
               <X className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
             </button>
           </div>
 
-          <div className="prose prose-xs sm:prose-sm dark:prose-invert max-w-none markdown-wrapper overflow-y-auto">
+          <div className="prose prose-xs sm:prose-sm max-w-none markdown-wrapper overflow-y-auto">
             <div className="max-h-[60vh] sm:max-h-[50vh] pr-1 text-[11px] sm:text-sm">
               {renderMarkdown(searchResult)}
             </div>
@@ -264,21 +264,21 @@ export function VisualResearchBar() {
       {/* Search suggestions */}
       {showSuggestions && !isResultVisible && !isSearching && (
         <>
-          <div className="fixed inset-0 bg-transparent z-40" onClick={() => setShowSuggestions(false)} />
+          <div className="fixed inset-0 bg-transparent z-[100]" onClick={() => setShowSuggestions(false)} />
           <div
             ref={resultRef}
-            className="absolute top-full left-0 right-0 mt-1 bg-background/95 backdrop-blur-sm border border-border/30 rounded-md shadow-sm p-1.5 sm:p-2 z-50"
+            className="absolute top-full left-0 right-0 mt-1 bg-white/95 backdrop-blur-md border border-border/50 rounded-md shadow-md p-2 sm:p-3 z-[101]"
           >
-          <div className="text-[10px] sm:text-xs text-muted-foreground/70 mb-1 sm:mb-1.5 px-2">Popular searches:</div>
-          <div className="space-y-0.5">
+          <div className="text-[10px] sm:text-xs font-medium text-foreground mb-1.5 sm:mb-2 px-1">Popular searches:</div>
+          <div className="space-y-1">
             {searchSuggestions.map((suggestion, index) => (
               <div
                 key={index}
-                className="px-2 py-1 sm:py-1.5 text-[10px] sm:text-xs hover:bg-accent/10 rounded cursor-pointer transition-colors"
+                className="px-2 py-1.5 sm:py-2 text-[10px] sm:text-xs text-foreground/90 hover:bg-accent/20 rounded cursor-pointer transition-colors"
                 onClick={() => handleSuggestionClick(suggestion)}
               >
                 <div className="flex items-center">
-                  <Search className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-muted-foreground/50 mr-1.5 sm:mr-2" />
+                  <Search className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-primary/70 mr-1.5 sm:mr-2" />
                   {suggestion}
                 </div>
               </div>
@@ -290,8 +290,8 @@ export function VisualResearchBar() {
 
       {error && (
         <>
-          <div className="fixed inset-0 bg-transparent z-40" onClick={() => setError(null)} />
-          <div className="absolute top-full left-0 right-0 mt-1 bg-red-500/10 border border-red-500/30 rounded-md p-1.5 sm:p-2 text-[10px] sm:text-xs text-red-500 z-50">
+          <div className="fixed inset-0 bg-transparent z-[100]" onClick={() => setError(null)} />
+          <div className="absolute top-full left-0 right-0 mt-1 bg-white/90 backdrop-blur-md border border-red-500/50 rounded-md p-2 sm:p-3 text-[10px] sm:text-xs text-red-600 font-medium z-[101] shadow-md">
             {error}
           </div>
         </>

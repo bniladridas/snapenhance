@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   description: 'Screenshot Enhancement and Visual Content Platform for social media, documentation, presentations, and more',
   metadataBase: new URL('https://snapenhance.vercel.app'),
   icons: {
-    icon: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: '/favicon-pastel.svg',
+    apple: '/favicon-pastel.svg',
   },
   openGraph: {
     title: 'SnapEnhance',
@@ -53,9 +53,9 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
       </head>
-      <body className={`${outfit.className} ${outfit.variable} antialiased`}>
+      <body className={`${outfit.className} ${outfit.variable} antialiased bg-pastel-gradient`}>
         <Providers>
-          <div className="min-h-screen flex flex-col bg-background">
+          <div className="min-h-screen flex flex-col">
             <SiteHeader />
             <main className="flex-1 flex flex-col">{children}</main>
             <FloatingInfoButton />

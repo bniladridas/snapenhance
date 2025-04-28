@@ -68,7 +68,7 @@
   /* Clean Theme Integration */
   --delta-primary: var(--delta-blue-600);
   --delta-primary-foreground: white;
-  --delta-background: white;
+  --delta-background: transparent; /* Use transparent to let the gradient show through */
   --delta-foreground: var(--delta-gray-900);
   --delta-card: white;
   --delta-card-foreground: var(--delta-gray-900);

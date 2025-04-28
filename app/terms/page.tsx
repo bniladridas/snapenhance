@@ -2,11 +2,11 @@
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Terms of Service</h1>
 
-        <div className="space-y-6 text-sm">
+        <div className="space-y-6 text-sm bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
             <h2>1. Introduction</h2>
             <p>
               Welcome to SnapEnhance ("we," "our," or "us"). These Terms of Service ("Terms") govern your access to and use of the SnapEnhance website, applications, and services (collectively, the "Service").

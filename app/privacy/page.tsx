@@ -2,11 +2,11 @@
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Privacy Policy</h1>
 
-        <div className="space-y-6 text-sm">
+        <div className="space-y-6 text-sm bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
             <h2>1. Introduction</h2>
             <p>
               At SnapEnhance ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, applications, and services (collectively, the "Service").

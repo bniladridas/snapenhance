@@ -41,14 +41,14 @@ export function HomeClient() {
   const isDelta = mode === 'delta';
 
   return (
-    <div className={`min-h-screen py-8 ${isDelta ? 'bg-white' : 'bg-background'} transition-colors duration-500 overflow-x-hidden w-full`}>
+    <div className="min-h-screen py-8 bg-pastel-gradient transition-colors duration-500 overflow-x-hidden w-full">
       <div className="container px-4 max-w-4xl mx-auto w-full">
         {!isDelta && (
           // Responsive SnapEnhance header
           <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
             <div className="flex items-center gap-2">
               <img
-                src="/logo.svg"
+                src="/logo-pastel.svg"
                 alt="SnapEnhance Logo"
                 className="w-8 h-8 sm:w-10 sm:h-10"
               />
@@ -87,11 +87,11 @@ export function HomeClient() {
         <main>
           {!isDelta && (
             <>
-              <div className="mb-6 px-4 py-3 bg-background/80 rounded-md border border-border/10 shadow-sm">
+              <div className="mb-6 px-4 py-3 bg-white/90 backdrop-blur-sm rounded-md border border-border/10 shadow-sm relative z-10">
                 <VisualResearchBar />
               </div>
 
-              <div className="mb-10 px-4 py-6 bg-gradient-to-br from-background via-accent/5 to-background rounded-md border border-border/10 shadow-sm relative overflow-hidden">
+              <div className="mb-10 px-4 py-6 bg-white/80 backdrop-blur-sm rounded-md border border-border/10 shadow-sm relative overflow-hidden z-0">
                 <div className="absolute inset-0 bg-grid-pattern opacity-[0.015] pointer-events-none"></div>
                 <h2 className="text-base font-medium mb-3 text-center">How Our Software Works: The Fundamental Truth of Visual Stack</h2>
 

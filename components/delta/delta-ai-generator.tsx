@@ -91,13 +91,13 @@ export function DeltaAiGenerator() {
   return (
     <div className="max-w-3xl mx-auto delta-fade-in">
       {/* Header with Mode Toggle */}
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex justify-between items-center mb-8 p-4 bg-white/90 backdrop-blur-sm rounded-md border border-gray-200/50 shadow-sm">
         <div className="text-2xl text-blue-600">Δ</div>
         <ModeToggle variant="switch" />
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col space-y-6">
+      <div className="flex flex-col space-y-6 p-6 bg-white/90 backdrop-blur-sm rounded-md border border-gray-200/50 shadow-sm">
         {/* Input Section - Ultra Clean */}
         <div className="delta-slide-up" style={{ animationDelay: '100ms' }}>
           <textarea
@@ -113,24 +113,24 @@ export function DeltaAiGenerator() {
               }
             }}
             placeholder="Describe the image you want to generate..."
-            className="w-full p-3 border border-gray-200 rounded-md text-sm resize-none h-24 focus:outline-none focus:ring-1 focus:ring-blue-200 transition-all duration-300"
+            className="w-full p-3 border border-blue-200 rounded-md text-sm resize-none h-24 focus:outline-none focus:ring-1 focus:ring-blue-300 bg-white shadow-sm transition-all duration-300"
           />
         </div>
 
         {/* Image Preview Area */}
         <div className="delta-slide-up" style={{ animationDelay: '200ms' }}>
           {!generatedImage ? (
-            <div className="border border-gray-200 rounded-md flex items-center justify-center h-64 transition-all duration-300">
+            <div className="border border-blue-200 rounded-md flex items-center justify-center h-64 transition-all duration-300 bg-white shadow-sm">
               <div className="text-center">
-                <div className="text-xl text-blue-400 mb-2 transition-transform duration-700 ease-in-out">Δ</div>
-                <p className="text-sm text-gray-500">
+                <div className="text-xl text-blue-500 mb-2 transition-transform duration-700 ease-in-out">Δ</div>
+                <p className="text-sm text-gray-600">
                   Your generated image will appear here
                 </p>
               </div>
             </div>
           ) : (
             <div className="delta-fade-in">
-              <div className="rounded-md overflow-hidden aspect-square delta-blur-to-clear border border-gray-200 relative">
+              <div className="rounded-md overflow-hidden aspect-square delta-blur-to-clear border border-blue-200 relative bg-white shadow-sm">
                 <img
                   src={generatedImage}
                   alt="AI Generated"
@@ -138,7 +138,7 @@ export function DeltaAiGenerator() {
                 />
                 <button
                   onClick={handleDownload}
-                  className="absolute bottom-2 right-2 bg-white p-1.5 rounded-full shadow-sm hover:shadow transition-all duration-300"
+                  className="absolute bottom-2 right-2 bg-white p-1.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100"
                 >
                   <Download className="h-4 w-4 text-blue-500" />
                 </button>
@@ -156,7 +156,7 @@ export function DeltaAiGenerator() {
 
         {/* Error Message */}
         {generationError && (
-          <div className="text-xs text-red-500 p-3 rounded-md bg-red-50 border border-red-100 delta-fade-in">
+          <div className="text-xs text-red-500 p-3 rounded-md bg-white border border-red-200 shadow-sm delta-fade-in">
             <p>{generationError}</p>
           </div>
         )}
@@ -186,7 +186,7 @@ export function DeltaAiGenerator() {
       </div>
 
       {/* Footer */}
-      <div className="text-xs text-gray-400 text-center mt-6 delta-fade-in-slow" style={{ animationDelay: '500ms' }}>
+      <div className="text-xs text-blue-500 text-center mt-6 p-3 bg-white/80 backdrop-blur-sm rounded-md border border-blue-100/50 shadow-sm delta-fade-in-slow" style={{ animationDelay: '500ms' }}>
         Powered by Delta AI
       </div>
     </div>

@@ -15,11 +15,11 @@ export default async function ChangelogPage() {
   const changelogHtml = marked.parse(changelogMd);
 
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Changelog</h1>
 
-        <div className="prose prose-sm max-w-none">
+        <div className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <div dangerouslySetInnerHTML={{ __html: changelogHtml }} />
         </div>
 

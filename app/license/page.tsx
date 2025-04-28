@@ -2,11 +2,11 @@
 
 export default function LicensePage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">License</h1>
 
-        <div className="prose prose-sm dark:prose-invert max-w-none">
+        <div className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <h2 className="text-lg font-medium mb-4">MIT License</h2>
 
           <p className="text-muted-foreground mb-6">
@@ -37,14 +37,14 @@ export default function LicensePage() {
             SOFTWARE.
           </p>
 
-          <div className="mt-8 p-4 bg-muted/20 rounded-lg border border-border/30">
+          <div className="mt-8 p-4 bg-white rounded-lg border border-border/30 shadow-sm">
             <h3 className="text-base font-medium mb-2">What This Means</h3>
             <p className="text-sm text-muted-foreground">
               The MIT License is a permissive license that is short and to the point. It lets people do almost anything they want with your project, like making and distributing closed source versions, as long as they include the original license and copyright notice in any copy of the software or substantial portion of it.
             </p>
           </div>
 
-          <div className="mt-6 p-4 bg-muted/20 rounded-lg border border-border/30">
+          <div className="mt-6 p-4 bg-white rounded-lg border border-border/30 shadow-sm">
             <h3 className="text-base font-medium mb-2">Third-Party Licenses</h3>
             <p className="text-sm text-muted-foreground">
               SnapEnhance uses several open-source libraries and components, each with their own licenses. All third-party components are used in compliance with their respective licenses. Major dependencies include:

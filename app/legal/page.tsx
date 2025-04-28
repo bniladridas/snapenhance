@@ -4,12 +4,12 @@ import { TimeSyncDisplay } from '@/components/time-sync-display';
 
 export default function LegalPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Legal Software Information</h1>
 
         <div className="space-y-6 text-sm">
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">What "Legal Software" Means</h2>
             <div className="space-y-4 text-muted-foreground">
               <div>
@@ -38,7 +38,7 @@ export default function LegalPage() {
             </div>
           </section>
 
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">Examples of Legal Software</h2>
             <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
               <li>Microsoft Office installed with a valid license key</li>
@@ -48,7 +48,7 @@ export default function LegalPage() {
             </ul>
           </section>
 
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">Risks of Illegal Software</h2>
             <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
               <li>Security vulnerabilities</li>
@@ -95,7 +95,7 @@ export default function LegalPage() {
             </div>
           </section>
 
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">SnapEnhance Licensing</h2>
             <p className="text-muted-foreground">
               SnapEnhance is provided under the MIT License, which allows for both personal and commercial use.

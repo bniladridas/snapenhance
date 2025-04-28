@@ -18,11 +18,11 @@ export default function CookiesPage() {
     }
   }, []);
   return (
-    <div className="py-8 bg-background">
+    <div className="py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Cookie & Cache Policy</h1>
 
-        <div className="prose prose-sm max-w-none">
+        <div className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <p>
             SnapEnhance uses cookies and local storage to enhance your experience and provide certain features.
             This policy explains how we use these technologies and what information we store.

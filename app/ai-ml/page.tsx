@@ -5,12 +5,12 @@ import Link from 'next/link';
 
 export default function AIMLPage() {
   return (
-    <div className="min-h-screen py-8 bg-background">
+    <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">AI/ML Information</h1>
 
         <div className="space-y-6 text-sm">
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">AI/ML Features in SnapEnhance</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
@@ -63,7 +63,7 @@ export default function AIMLPage() {
             </div>
           </section>
 
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">Third-Party AI Services</h2>
             <div className="space-y-4 text-muted-foreground">
               <div>
@@ -83,7 +83,7 @@ export default function AIMLPage() {
             </div>
           </section>
 
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">Data Usage and Privacy</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
@@ -152,7 +152,7 @@ export default function AIMLPage() {
             </div>
           </section>
 
-          <section>
+          <section className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 shadow-sm">
             <h2 className="text-base font-medium mb-2">Feedback and Reporting</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>

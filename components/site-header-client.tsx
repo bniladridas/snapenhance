@@ -49,13 +49,13 @@ export function SiteHeaderClient() {
           <div className="flex items-center gap-2 sm:gap-4">
             <Link href="/" className="flex items-center gap-1 sm:gap-2 hover:opacity-90 transition-opacity">
               <img
-                src={isDelta ? "/images/delta-logo.svg" : "/logo.svg"}
+                src={isDelta ? "/images/delta-logo.svg" : "/logo-pastel.svg"}
                 alt={isDelta ? "Delta Logo" : "SnapEnhance Logo"}
                 className="w-5 h-5 sm:w-6 sm:h-6"
                 onError={(e) => {
                   // Fallback if delta logo doesn't exist
                   if (isDelta) {
-                    e.currentTarget.src = "/logo.svg";
+                    e.currentTarget.src = "/logo-pastel.svg";
                   }
                 }}
               />

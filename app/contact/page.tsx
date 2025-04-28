@@ -13,7 +13,7 @@ export default function ContactPage() {
     subject: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -30,14 +30,14 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
-    
+
     // Validate form
     if (!formState.name || !formState.email || !formState.message) {
       setError('Please fill in all required fields.');
       setIsSubmitting(false);
       return;
     }
-    
+
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formState.email)) {
@@ -45,12 +45,12 @@ export default function ContactPage() {
       setIsSubmitting(false);
       return;
     }
-    
+
     try {
       // In a real application, you would send this data to your backend
       // For now, we'll simulate a successful submission
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       // Reset form and show success message
       setFormState({
         name: '',
@@ -67,12 +67,12 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-8 bg-background">
+    <div className="py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
         <h1 className="text-xl font-medium mb-6">Contact Us</h1>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
             {isSubmitted ? (
               <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900/50 rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
@@ -84,8 +84,8 @@ export default function ContactPage() {
                 <p className="text-sm text-muted-foreground mb-4">
                   Thank you for contacting us. We'll get back to you as soon as possible.
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => setIsSubmitted(false)}
                 >
@@ -108,7 +108,7 @@ export default function ContactPage() {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
                       Email <span className="text-red-500">*</span>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium">
                     Subject
@@ -137,7 +137,7 @@ export default function ContactPage() {
                     placeholder="What is your message about?"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
                     Message <span className="text-red-500">*</span>
@@ -152,15 +152,15 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                
+
                 {error && (
                   <div className="text-sm text-red-500 p-2 bg-red-50 dark:bg-red-950/30 border border-red-100 dark:border-red-900/50 rounded">
                     {error}
                   </div>
                 )}
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   disabled={isSubmitting}
                   className="flex items-center gap-2"
                 >
@@ -179,8 +179,8 @@ export default function ContactPage() {
               </form>
             )}
           </div>
-          
-          <div className="space-y-6">
+
+          <div className="space-y-6 bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
             <div>
               <h3 className="text-base font-medium mb-2">Contact Information</h3>
               <div className="text-sm text-muted-foreground space-y-2">
@@ -195,14 +195,14 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-            
+
             <div>
               <h3 className="text-base font-medium mb-2">Response Time</h3>
               <p className="text-sm text-muted-foreground">
                 We typically respond to all inquiries within 1-2 business days.
               </p>
             </div>
-            
+
             <div>
               <h3 className="text-base font-medium mb-2">Legal Inquiries</h3>
               <p className="text-sm text-muted-foreground">

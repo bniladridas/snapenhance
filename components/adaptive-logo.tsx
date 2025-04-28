@@ -23,8 +23,8 @@ export function AdaptiveLogo({ size = 'md', className }: AdaptiveLogoProps) {
         "font-medium tracking-tight",
         fontSize
       )}>
-        <span className="text-foreground">Snap</span>
-        <span className="text-primary">Enhance</span>
+        <span className="text-[#333333]">Snap</span>
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-blue-400 to-green-400">Enhance</span>
       </div>
     </div>
   );

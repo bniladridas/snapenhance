@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapEnhance Image Editor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg,
+                rgb(255, 220, 228) 0%,
+                rgb(230, 240, 255) 50%,
+                rgb(220, 255, 240) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            letter-spacing: -0.015em;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: #495057;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .editor-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .editor-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .control-section {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .control-section h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #212529;
+        }
+
+        .upload-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .upload-section:hover {
+            border-color: #94a3b8;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .upload-section p {
+            margin: 10px 0 0 0;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .upload-icon {
+            width: 40px;
+            height: 40px;
+            color: #64748b;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+        }
+
+        .template {
+            aspect-ratio: 16/9;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+        }
+
+        .template:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .template.selected {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #3b82f6;
+        }
+
+        .format-select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+            background-color: white;
+            font-size: 14px;
+        }
+
+        .preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .canvas-container {
+            position: relative;
+            max-width: 100%;
+            max-height: 500px;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8fafc;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #2563eb;
+        }
+
+        .download-btn:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .processing-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            font-size: 18px;
+            font-weight: 500;
+            color: #0f172a;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 500;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background with rounded corners -->
+                    <rect width="32" height="32" rx="8" fill="rgba(255, 255, 255, 0.9)"/>
+                    <rect width="32" height="32" rx="8" stroke="rgba(240, 240, 240, 0.5)" stroke-width="1"/>
+
+                    <!-- Stylized S and E letters -->
+                    <g fill="#212529">
+                        <text x="8" y="22" font-size="18" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="500">S</text>
+                        <text x="17" y="22" font-size="18" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="500">E</text>
+                    </g>
+
+                    <!-- Subtle accent element -->
+                    <rect x="8" y="24" width="16" height="2" rx="1" fill="#E9ECEF"/>
+                </svg>
+                <span class="logo-text">SnapEnhance</span>
+            </div>
+            <h1>Image Background Enhancer</h1>
+            <p>Add professional backgrounds to your images with just a few clicks</p>
+        </div>
+
+        <div class="editor-container">
+            <div class="controls">
+                <div class="control-section">
+                    <h3>1. Upload Your Image</h3>
+                    <label for="file-input" class="upload-section" id="upload-area">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <p>Click to upload or drag and drop</p>
+                    </label>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+                </div>
+
+                <div class="control-section">
+                    <h3>2. Choose Output Format</h3>
+                    <select id="format-select" class="format-select">
+                        <option value="standard">Standard (1200×630)</option>
+                        <option value="square">Square (1080×1080)</option>
+                        <option value="wide">Wide (1920×1080)</option>
+                        <option value="story">Story (1080×1920)</option>
+                        <option value="custom">Custom (1500×1000)</option>
+                    </select>
+                </div>
+
+                <div class="control-section">
+                    <h3>3. Select Background Style</h3>
+                    <div class="templates-grid" id="templates-grid">
+                        <!-- Templates will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-container">
+                <div class="canvas-container">
+                    <canvas id="preview-canvas"></canvas>
+                    <div id="processing-overlay" class="processing-overlay hidden">Processing...</div>
+                </div>
+                <button id="download-btn" class="download-btn" disabled>Download Enhanced Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Template definitions with their colors
+        const templates = [
+            // Minimal Templates
+            {
+                id: 'minimal-light',
+                name: 'Minimal Light',
+                colors: ['#f8fafc', '#f1f5f9'],
+            },
+            {
+                id: 'minimal-dark',
+                name: 'Minimal Dark',
+                colors: ['#1e293b', '#0f172a'],
+            },
+            {
+                id: 'blue-minimal',
+                name: 'Blue Minimal',
+                colors: ['#f0f9ff', '#e0f2fe'],
+            },
+            {
+                id: 'gray-minimal',
+                name: 'Gray Minimal',
+                colors: ['#f9fafb', '#f3f4f6'],
+            },
+            {
+                id: 'warm-minimal',
+                name: 'Warm Minimal',
+                colors: ['#fafaf9', '#f5f5f4'],
+            },
+            {
+                id: 'accent-minimal',
+                name: 'Accent Minimal',
+                colors: ['#f8fafc', '#e0f2fe'],
+            },
+
+            // Business Templates
+            {
+                id: 'corporate-slide',
+                name: 'Corporate Slide',
+                colors: ['#dbeafe', '#93c5fd'],
+            },
+            {
+                id: 'quarterly-report',
+                name: 'Quarterly Report',
+                colors: ['#dcfce7', '#86efac'],
+            },
+            {
+                id: 'product-showcase',
+                name: 'Product Showcase',
+                colors: ['#f3e8ff', '#d8b4fe'],
+            },
+            {
+                id: 'social-announcement',
+                name: 'Social Announcement',
+                colors: ['#ffedd5', '#fed7aa'],
+            },
+            {
+                id: 'technical-documentation',
+                name: 'Technical Documentation',
+                colors: ['#f1f5f9', '#cbd5e1'],
+            },
+            {
+                id: 'executive-summary',
+                name: 'Executive Summary',
+                colors: ['#fee2e2', '#fecaca'],
+            },
+        ];
+
+        // Delta templates
+        const deltaTemplates = [
+            {
+                id: 'delta-minimal',
+                name: 'Delta Minimal',
+                colors: ['#f0f9ff', '#e0f2fe'],
+            },
+            {
+                id: 'delta-dark',
+                name: 'Delta Dark',
+                colors: ['#0f172a', '#1e293b'],
+            },
+            {
+                id: 'delta-gradient',
+                name: 'Delta Gradient',
+                colors: ['#3b82f6', '#2563eb'],
+            },
+            {
+                id: 'delta-tech',
+                name: 'Delta Tech',
+                colors: ['#18181b', '#3f3f46'],
+            },
+            {
+                id: 'delta-nature',
+                name: 'Delta Nature',
+                colors: ['#166534', '#22c55e'],
+            },
+        ];
+
+        // Combine all templates
+        const allTemplates = [...templates, ...deltaTemplates];
+
+        // DOM elements
+        const fileInput = document.getElementById('file-input');
+        const uploadArea = document.getElementById('upload-area');
+        const templatesGrid = document.getElementById('templates-grid');
+        const formatSelect = document.getElementById('format-select');
+        const previewCanvas = document.getElementById('preview-canvas');
+        const downloadBtn = document.getElementById('download-btn');
+        const processingOverlay = document.getElementById('processing-overlay');
+
+        // State variables
+        let uploadedImage = null;
+        let selectedTemplate = null;
+        let isProcessing = false;
+
+        // Initialize templates grid
+        function initTemplatesGrid() {
+            templatesGrid.innerHTML = '';
+            
+            allTemplates.forEach(template => {
+                const templateEl = document.createElement('div');
+                templateEl.className = 'template';
+                templateEl.id = `template-${template.id}`;
+                templateEl.style.background = `linear-gradient(135deg, ${template.colors[0]}, ${template.colors[1]})`;
+                templateEl.setAttribute('data-template-id', template.id);
+                templateEl.title = template.name;
+                
+                templateEl.addEventListener('click', () => {
+                    selectTemplate(template.id);
+                });
+                
+                templatesGrid.appendChild(templateEl);
+            });
+        }
+
+        // Select a template
+        function selectTemplate(templateId) {
+            // Remove selected class from all templates
+            document.querySelectorAll('.template').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // Add selected class to the chosen template
+            const templateEl = document.getElementById(`template-${templateId}`);
+            if (templateEl) {
+                templateEl.classList.add('selected');
+            }
+            
+            selectedTemplate = templateId;
+            
+            // Apply template if an image is uploaded
+            if (uploadedImage) {
+                applyTemplate();
+            }
+        }
+
+        // Handle file upload
+        function handleFileUpload(file) {
+            if (!file) return;
+            
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                uploadedImage = new Image();
+                uploadedImage.onload = function() {
+                    if (selectedTemplate) {
+                        applyTemplate();
+                    }
+                };
+                uploadedImage.src = e.target.result;
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        // Apply template to image
+        function applyTemplate() {
+            if (!uploadedImage || !selectedTemplate) return;
+            
+            isProcessing = true;
+            processingOverlay.classList.remove('hidden');
+            
+            const template = allTemplates.find(t => t.id === selectedTemplate);
+            if (!template) {
+                isProcessing = false;
+                processingOverlay.classList.add('hidden');
+                return;
+            }
+            
+            const format = getSelectedFormat();
+            
+            const ctx = previewCanvas.getContext('2d');
+            
+            // Set canvas dimensions based on format
+            previewCanvas.width = format.width;
+            previewCanvas.height = format.height;
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, previewCanvas.width, previewCanvas.height);
+            gradient.addColorStop(0, template.colors[0]);
+            gradient.addColorStop(1, template.colors[1]);
+            
+            // Fill background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
+            
+            // Calculate image dimensions to fit within the canvas while maintaining aspect ratio
+            const imgAspect = uploadedImage.width / uploadedImage.height;
+            const canvasAspect = previewCanvas.width / previewCanvas.height;
+            
+            let drawWidth, drawHeight, offsetX, offsetY;
+            
+            if (imgAspect > canvasAspect) {
+                // Image is wider than canvas (relative to height)
+                drawHeight = previewCanvas.height * 0.8; // Use 80% of canvas height
+                drawWidth = drawHeight * imgAspect;
+            } else {
+                // Image is taller than canvas (relative to width)
+                drawWidth = previewCanvas.width * 0.8; // Use 80% of canvas width
+                drawHeight = drawWidth / imgAspect;
+            }
+            
+            // Center the image
+            offsetX = (previewCanvas.width - drawWidth) / 2;
+            offsetY = (previewCanvas.height - drawHeight) / 2;
+            
+            // Add subtle shadow to the image
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+            ctx.shadowBlur = 15;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 5;
+            
+            // Draw image centered
+            ctx.drawImage(uploadedImage, offsetX, offsetY, drawWidth, drawHeight);
+            
+            // Reset shadow
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            
+            // Enable download button
+            downloadBtn.disabled = false;
+            
+            isProcessing = false;
+            processingOverlay.classList.add('hidden');
+        }
+
+        // Get selected format dimensions
+        function getSelectedFormat() {
+            const formatValue = formatSelect.value;
+            
+            switch (formatValue) {
+                case 'square':
+                    return { width: 1080, height: 1080 };
+                case 'wide':
+                    return { width: 1920, height: 1080 };
+                case 'story':
+                    return { width: 1080, height: 1920 };
+                case 'custom':
+                    return { width: 1500, height: 1000 };
+                default: // standard
+                    return { width: 1200, height: 630 };
+            }
+        }
+
+        // Download the enhanced image
+        function downloadImage() {
+            if (!uploadedImage || !selectedTemplate) return;
+            
+            const link = document.createElement('a');
+            link.download = `enhanced-image-${selectedTemplate}.png`;
+            link.href = previewCanvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Event listeners
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files && e.target.files[0]) {
+                handleFileUpload(e.target.files[0]);
+            }
+        });
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#3b82f6';
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = '#cbd5e1';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#cbd5e1';
+            
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                handleFileUpload(e.dataTransfer.files[0]);
+            }
+        });
+
+        formatSelect.addEventListener('change', () => {
+            if (uploadedImage && selectedTemplate) {
+                applyTemplate();
+            }
+        });
+
+        downloadBtn.addEventListener('click', downloadImage);
+
+        // Initialize the app
+        initTemplatesGrid();
+        
+        // Select default template
+        selectTemplate('social-announcement');
+    </script>
+</body>
+</html>

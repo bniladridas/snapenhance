@@ -8,6 +8,16 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/google-startup-trust" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">How Google Might Trust Our Startup: A System Perspective</h2>
+              <p className="text-xs text-muted-foreground">Published: April 29, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Explore how our technical implementation, user experience design, and ethical considerations help build trust with major platforms like Google.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/time-zone-detection" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Automatic Time Zone Detection</h2>
               <p className="text-xs text-muted-foreground">Published: April 28, 2025</p>

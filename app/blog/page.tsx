@@ -8,6 +8,46 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/snapenhance-ai-platform" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Introducing SnapEnhance AI: Powerful Text-Based Assistant Powered by Llama 3.3 and DeepSeek R1</h2>
+              <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Discover our new text-based AI assistant platform featuring zero-shot function calling, real-time data integration, and enhanced response formatting powered by cutting-edge language models.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/prompt-engineering-guide" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Prompt Engineering Guide: Creating Effective AI Image Prompts</h2>
+              <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Learn how to craft effective prompts for AI image generation in Delta mode with our comprehensive guide to prompt engineering techniques.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/product-roadmap" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">SnapEnhance Product Roadmap: The Future of Visual Content Creation</h2>
+              <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Explore our ambitious vision for SnapEnhance as we evolve from a screenshot enhancement tool into a comprehensive visual content platform.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/ai-ethics" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">AI Ethics: Our Approach to Responsible Visual AI</h2>
+              <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Learn about our ethical framework for AI implementation, focusing on transparency, privacy, and human-centered design in our visual AI features.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/office-productivity" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Transforming Office Productivity with SnapEnhance</h2>
               <p className="text-xs text-muted-foreground">Published: April 29, 2025</p>
@@ -314,7 +354,7 @@ export default function BlogPage() {
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 28, 2025</p>
+          <p>Last updated: April 30, 2025</p>
         </div>
       </div>
     </div>

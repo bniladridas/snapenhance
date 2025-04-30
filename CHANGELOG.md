@@ -2,6 +2,24 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
+## [1.4.2] - 2025-04-30
+
+### Added
+
+- Announced SnapEnhance AI text-based assistant platform powered by Llama 3.3 70B and DeepSeek R1 models
+- Created comprehensive blog post detailing the features and development timeline of SnapEnhance AI
+- Included detailed changelog information from SnapEnhance AI's development history (v1.0.0 through v1.3.4)
+- Updated blog index page with new platform announcement
+
+## [1.4.1] - 2025-04-30
+
+### Added
+
+- Added comprehensive blog post on AI ethics and our approach to responsible visual AI
+- Added detailed product roadmap blog post outlining our future vision and development plans
+- Added prompt engineering guide blog post with techniques for effective AI image generation
+- Updated blog index page with new content
+
 ## [1.4.0] - 2025-04-28
 > Note: Version 1.3.0 was skipped in the versioning sequence.
 

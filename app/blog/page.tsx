@@ -8,6 +8,16 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/version-numbering" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Understanding SnapEnhance Version Numbering: Our Approach to Semantic Versioning</h2>
+              <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Learn how we use semantic versioning principles to communicate the significance of each update and the evolution of our platform through our version numbering system.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/snapenhance-ai-platform" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Introducing SnapEnhance AI: Powerful Text-Based Assistant Powered by Llama 3.3 and DeepSeek R1</h2>
               <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>

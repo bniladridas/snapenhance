@@ -2,6 +2,13 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
+## [1.4.3] - 2025-04-30
+
+### Added
+
+- Created new blog post explaining our semantic versioning approach and version numbering system
+- Updated blog index page with the new version numbering blog post
+
 ## [1.4.2] - 2025-04-30
 
 ### Added

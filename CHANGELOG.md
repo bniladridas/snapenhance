@@ -2,6 +2,14 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
+## [1.5.0] - 2025-05-01
+
+### Added
+
+- Created detailed blog post explaining the new Quick Mode feature and performance improvements
+- Documented the technical implementation of optimized token limits and API timeouts
+- Updated blog index page with the new Quick Mode feature blog post
+
 ## [1.4.4] - 2025-04-30
 
 ### Added

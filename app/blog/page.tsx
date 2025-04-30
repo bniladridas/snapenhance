@@ -8,6 +8,16 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/quick-mode-feature" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Introducing Quick Mode: Ultra-Fast Responses in SnapEnhance AI</h2>
+              <p className="text-xs text-muted-foreground">Published: May 1, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Learn about our new Quick Mode toggle that provides ultra-fast responses when speed is a priority, along with technical improvements for better performance.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/voice-interface-philosophy" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Voice Interface & Philosophy: New Features in SnapEnhance AI</h2>
               <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>

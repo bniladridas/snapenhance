@@ -2,6 +2,14 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
+## [1.4.4] - 2025-04-30
+
+### Added
+
+- Created comprehensive blog post documenting voice interface features and clarity-over-complexity philosophy
+- Detailed documentation of voice input functionality, microinteractions, and philosophical principles
+- Updated blog index page with the new voice interface and philosophy blog post
+
 ## [1.4.3] - 2025-04-30
 
 ### Added

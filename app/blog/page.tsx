@@ -8,6 +8,16 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/voice-interface-philosophy" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Voice Interface & Philosophy: New Features in SnapEnhance AI</h2>
+              <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Discover our new voice interface with real-time transcription and learn about our clarity-over-complexity philosophy that guides SnapEnhance AI's development.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/version-numbering" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Understanding SnapEnhance Version Numbering: Our Approach to Semantic Versioning</h2>
               <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>

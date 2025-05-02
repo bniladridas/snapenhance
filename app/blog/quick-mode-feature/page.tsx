@@ -26,7 +26,7 @@ export default function QuickModeFeaturePage() {
 
           <p>
             Today we're excited to introduce Quick Mode, a new feature that allows you to get ultra-fast responses from
-            SnapEnhance AI when speed is more important than comprehensive detail. This update represents our commitment
+            <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> SnapEnhance AI</a> when speed is more important than comprehensive detail. This update represents our commitment
             to giving users more control over their AI experience and addressing different use cases with tailored solutions.
           </p>
 
@@ -51,7 +51,7 @@ export default function QuickModeFeaturePage() {
           <h2 className="text-lg font-medium mt-8 mb-4">How Quick Mode Works</h2>
 
           <p>
-            Quick Mode fundamentally changes how SnapEnhance AI generates responses:
+            Quick Mode fundamentally changes how <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> generates responses:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
@@ -131,7 +131,7 @@ const modelParameters = {
               <strong>Ask Your Question:</strong> Type or speak your query as you normally would.
             </li>
             <li>
-              <strong>Receive Fast Response:</strong> SnapEnhance AI will prioritize speed, giving you a concise answer more quickly
+              <strong>Receive Fast Response:</strong> <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> will prioritize speed, giving you a concise answer more quickly
               than in Standard Mode.
             </li>
             <li>
@@ -302,12 +302,13 @@ const optimizedApiCall = async (prompt, parameters) => {
 
           <p>
             We're excited about these improvements and look forward to hearing your feedback on Quick Mode. Your input helps us
-            continue refining and enhancing SnapEnhance AI to better meet your needs.
+            continue refining and enhancing <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> to better meet your needs.
           </p>
 
           <div className="border-t border-border/20 mt-8 pt-4">
             <p className="text-sm text-muted-foreground/80">
-              To try Quick Mode for yourself, visit the <Link href="/ai" className="text-primary hover:underline">SnapEnhance AI platform</Link>.
+              To try Quick Mode for yourself, visit the <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI platform</a>.
+              After trying it out, we'd love to hear your <a href="/feedback" className="text-primary hover:underline">feedback</a>.
               For more information about our approach to AI development, check out our <Link href="/blog/voice-interface-philosophy" className="text-primary hover:underline">Philosophy</Link> blog post.
             </p>
           </div>

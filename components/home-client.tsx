@@ -158,7 +158,7 @@ export function HomeClient() {
                     </svg>
                   </a>
                 </div>
-                <p>snapenhance.vercel.app</p>
+                <p>snapenhance.vercel.app | <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">snapenhanceai.vercel.app</a></p>
               </div>
             </div>
           )}

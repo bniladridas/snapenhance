@@ -6,7 +6,7 @@ export default function VoiceInterfacePhilosophyPage() {
   return (
     <div className="min-h-screen py-8 bg-pastel-gradient">
       <div className="container px-4 max-w-3xl mx-auto">
-        <h1 className="text-xl font-medium mb-6">Voice Interface & Philosophy: New Features in SnapEnhance AI</h1>
+        <h1 className="text-xl font-medium mb-6">Voice Interface & Philosophy: New Features in <span className="text-primary">SnapEnhance AI</span></h1>
 
         <article className="prose prose-sm max-w-none bg-white/90 backdrop-blur-sm p-6 rounded-lg border border-border/30 shadow-sm">
           <p className="text-muted-foreground mb-4">
@@ -16,7 +16,7 @@ export default function VoiceInterfacePhilosophyPage() {
           <div className="mb-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Key Takeaways</h3>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-              <li>SnapEnhance AI now features a sophisticated voice interface with real-time transcription</li>
+              <li><a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> now features a sophisticated voice interface with real-time transcription</li>
               <li>Voice commands provide an intuitive, hands-free way to interact with the platform</li>
               <li>Our new Philosophy section outlines our clarity-over-complexity approach</li>
               <li>Response generation has been enhanced to prioritize clarity and accessibility</li>
@@ -25,7 +25,7 @@ export default function VoiceInterfacePhilosophyPage() {
           </div>
 
           <p>
-            We're excited to announce a significant expansion of SnapEnhance AI's capabilities with the introduction of our
+            We're excited to announce a significant expansion of <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a>'s capabilities with the introduction of our
             voice interface and clarity-over-complexity philosophy. These updates represent our commitment to making AI more
             accessible, intuitive, and aligned with our core principles of clarity and user-centered design.
           </p>
@@ -33,7 +33,7 @@ export default function VoiceInterfacePhilosophyPage() {
           <h2 className="text-lg font-medium mt-8 mb-4">Voice Interface: A New Way to Interact</h2>
 
           <p>
-            Our new voice interface transforms how you interact with SnapEnhance AI. Instead of typing queries, you can now
+            Our new voice interface transforms how you interact with <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a>. Instead of typing queries, you can now
             speak naturally to the system, making the experience more intuitive and accessible for everyone.
           </p>
 
@@ -81,7 +81,7 @@ export default function VoiceInterfacePhilosophyPage() {
               or the cancel button if you want to start over.
             </li>
             <li>
-              <strong>Review Response:</strong> SnapEnhance AI will process your voice input just like a typed query, providing
+              <strong>Review Response:</strong> <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> will process your voice input just like a typed query, providing
               a clear, well-formatted response.
             </li>
           </ol>
@@ -191,7 +191,7 @@ const getRandomTooltip = () => {
           <pre className="bg-white p-4 rounded-md overflow-x-auto text-xs my-4 border border-border/30 shadow-sm">
 {`// Example of system prompt enhancement for clarity
 const enhancedSystemPrompt = \`
-You are SnapEnhance AI, a helpful assistant that prioritizes clarity over complexity.
+You are SnapEnhance AI (available at https://snapenhanceai.vercel.app/), a helpful assistant that prioritizes clarity over complexity.
 When responding to queries:
 
 1. Use clear, straightforward language that's accessible to a general audience
@@ -341,7 +341,8 @@ const voiceInterfaceArchitecture = {
 
           <div className="border-t border-border/20 mt-8 pt-4">
             <p className="text-sm text-muted-foreground/80">
-              To experience these features firsthand, visit the <Link href="/ai" className="text-primary hover:underline">SnapEnhance AI platform</Link>.
+              To experience these features firsthand, visit the <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI platform</a>.
+              We welcome your <a href="/feedback" className="text-primary hover:underline">feedback</a> on these new features.
               For more information about our approach to AI development, check out our <Link href="/blog/ai-ethics" className="text-primary hover:underline">AI Ethics</Link> blog post.
             </p>
           </div>

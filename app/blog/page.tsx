@@ -8,8 +8,18 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/feedback" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">New Feedback Form for <span className="text-primary">SnapEnhance AI</span> Platform</h2>
+              <p className="text-xs text-muted-foreground">Published: May 3, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                We've launched a dedicated feedback form for the SnapEnhance AI platform. Share your thoughts, report issues, or suggest new features to help us improve.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/quick-mode-feature" className="block">
-              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Introducing Quick Mode: Ultra-Fast Responses in SnapEnhance AI</h2>
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Introducing Quick Mode: Ultra-Fast Responses in <span className="text-primary">SnapEnhance AI</span></h2>
               <p className="text-xs text-muted-foreground">Published: May 1, 2025</p>
               <p className="text-sm text-muted-foreground mt-2">
                 Learn about our new Quick Mode toggle that provides ultra-fast responses when speed is a priority, along with technical improvements for better performance.
@@ -19,10 +29,10 @@ export default function BlogPage() {
 
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/voice-interface-philosophy" className="block">
-              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Voice Interface & Philosophy: New Features in SnapEnhance AI</h2>
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Voice Interface & Philosophy: New Features in <span className="text-primary">SnapEnhance AI</span></h2>
               <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
               <p className="text-sm text-muted-foreground mt-2">
-                Discover our new voice interface with real-time transcription and learn about our clarity-over-complexity philosophy that guides SnapEnhance AI's development.
+                Discover our new voice interface with real-time transcription and learn about our clarity-over-complexity philosophy that guides <span className="text-primary">SnapEnhance AI</span>'s development.
               </p>
             </a>
           </div>
@@ -39,7 +49,7 @@ export default function BlogPage() {
 
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/blog/snapenhance-ai-platform" className="block">
-              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Introducing SnapEnhance AI: Powerful Text-Based Assistant Powered by Llama 3.3 and DeepSeek R1</h2>
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">Introducing <span className="text-primary">SnapEnhance AI</span>: Powerful Text-Based Assistant Powered by Llama 3.3 and DeepSeek R1</h2>
               <p className="text-xs text-muted-foreground">Published: April 30, 2025</p>
               <p className="text-sm text-muted-foreground mt-2">
                 Discover our new text-based AI assistant platform featuring zero-shot function calling, real-time data integration, and enhanced response formatting powered by cutting-edge language models.
@@ -384,7 +394,7 @@ export default function BlogPage() {
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: April 30, 2025</p>
+          <p>Last updated: May 3, 2025</p>
         </div>
       </div>
     </div>

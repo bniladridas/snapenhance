@@ -54,7 +54,17 @@ export default function AIMLPage() {
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-foreground mb-1">5. Future AI Enhancements</h3>
+                <h3 className="text-sm font-medium text-foreground mb-1">5. SnapEnhance AI Platform</h3>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Our new <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI platform</a> provides a powerful text-based AI assistant experience.</li>
+                  <li>The platform leverages advanced language models including Llama 3.3 70B and DeepSeek R1 for sophisticated language capabilities.</li>
+                  <li>Features include zero-shot function calling, real-time data integration, and enhanced markdown formatting.</li>
+                  <li>Visit <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://snapenhanceai.vercel.app/</a> to experience it firsthand.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-medium text-foreground mb-1">6. Future AI Enhancements</h3>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>We are continuously working on new AI-powered features to improve screenshot enhancement capabilities.</li>
                   <li>Future updates may include automatic text recognition, content-aware cropping, and more sophisticated background generation.</li>
@@ -80,6 +90,20 @@ export default function AIMLPage() {
                   <li><strong>Terms of Service:</strong> <Link href="https://ai.google.dev/terms" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Google AI Terms of Service</Link></li>
                 </ul>
               </div>
+
+              <div>
+                <h3 className="text-sm font-medium text-foreground mb-1">SnapEnhance AI Platform Models</h3>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li><strong>Purpose:</strong> Powers our <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI platform</a> for text-based AI assistance</li>
+                  <li><strong>Models used:</strong>
+                    <ul className="list-disc pl-5 space-y-1 mt-1">
+                      <li>Llama 3.3 70B - Meta's state-of-the-art large language model for core conversational capabilities and zero-shot function calling</li>
+                      <li>DeepSeek R1 Distill Llama 70B - Specialized model optimized for technical content, mathematical problem-solving, and complex reasoning tasks</li>
+                    </ul>
+                  </li>
+                  <li><strong>Data handling:</strong> Your queries are processed securely with strict data minimization practices. We do not store conversation content beyond the current session.</li>
+                </ul>
+              </div>
             </div>
           </section>
 
@@ -95,6 +119,7 @@ export default function AIMLPage() {
                 <ul className="list-disc pl-5 space-y-1">
                   <li>When you use our visual research feature, your text queries are processed by Google's Gemini API.</li>
                   <li>When you use Delta mode, your image generation prompts are processed by Google's Gemini API.</li>
+                  <li>When you use <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a>, your queries are processed by Llama 3.3 70B or DeepSeek R1 models.</li>
                   <li>Your screenshots and images are processed locally on your device whenever possible.</li>
                   <li>We do not use your data to train our own AI models.</li>
                 </ul>
@@ -105,6 +130,7 @@ export default function AIMLPage() {
                 <ul className="list-disc pl-5 space-y-1">
                   <li>We do not store the content of your visual research queries or the responses beyond your current session.</li>
                   <li>We do not store your image generation prompts or the generated images beyond your current session.</li>
+                  <li>We do not store the content of your <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> conversations beyond your current session.</li>
                   <li>Your enhanced screenshots and AI-generated images are stored only on your device unless you explicitly choose to share them.</li>
                 </ul>
               </div>
@@ -167,7 +193,11 @@ export default function AIMLPage() {
               </ul>
 
               <p>
-                Please contact us through our support channels. Your feedback helps us improve our AI features for everyone.
+                Please <a href="/feedback" className="text-primary hover:underline">submit feedback</a> or contact us through our support channels. Your feedback helps us improve our AI features for everyone.
+              </p>
+
+              <p className="mt-2">
+                For specific feedback on the <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI platform</a>, please use our dedicated <a href="/feedback" className="text-primary hover:underline">feedback form</a>.
               </p>
             </div>
           </section>

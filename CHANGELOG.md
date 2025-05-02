@@ -2,6 +2,15 @@
 
 All notable changes to SnapEnhance will be documented in this file.
 
+## [1.5.1] - 2025-05-03
+
+### Added
+
+- Created dedicated feedback form for [SnapEnhance AI](https://snapenhanceai.vercel.app/) platform
+- Added feedback form links throughout the application for easier user feedback submission
+- Updated all SnapEnhance AI platform links to point to https://snapenhanceai.vercel.app/
+- Enhanced AI/ML information page with more detailed SnapEnhance AI platform documentation
+
 ## [1.5.0] - 2025-05-01
 
 ### Added
@@ -29,9 +38,9 @@ All notable changes to SnapEnhance will be documented in this file.
 
 ### Added
 
-- Announced SnapEnhance AI text-based assistant platform powered by Llama 3.3 70B and DeepSeek R1 models
-- Created comprehensive blog post detailing the features and development timeline of SnapEnhance AI
-- Included detailed changelog information from SnapEnhance AI's development history (v1.0.0 through v1.3.4)
+- Announced [SnapEnhance AI](https://snapenhanceai.vercel.app/) text-based assistant platform powered by Llama 3.3 70B and DeepSeek R1 models
+- Created comprehensive blog post detailing the features and development timeline of [SnapEnhance AI](https://snapenhanceai.vercel.app/)
+- Included detailed changelog information from [SnapEnhance AI](https://snapenhanceai.vercel.app/)'s development history (v1.0.0 through v1.3.4)
 - Updated blog index page with new platform announcement
 
 ## [1.4.1] - 2025-04-30

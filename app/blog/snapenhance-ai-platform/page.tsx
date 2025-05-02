@@ -16,7 +16,7 @@ export default function SnapEnhanceAIPlatformPage() {
           <div className="mb-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
             <h3 className="text-base font-medium mb-2">Key Takeaways</h3>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-              <li>SnapEnhance is evolving into SnapEnhance AI, a powerful text-based AI assistant platform</li>
+              <li>SnapEnhance is evolving into <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a>, a powerful text-based AI assistant platform</li>
               <li>The new platform leverages Llama 3.3 70B and DeepSeek R1 models for advanced language capabilities</li>
               <li>Key features include zero-shot function calling, real-time data integration, and enhanced markdown formatting</li>
               <li>SnapEnhance AI provides access to weather data, Wikipedia information, geocoding, and more</li>
@@ -25,10 +25,10 @@ export default function SnapEnhanceAIPlatformPage() {
           </div>
 
           <p>
-            Today, we're excited to announce the next chapter in our journey: <strong>SnapEnhance AI</strong>. This new platform
+            Today, we're excited to announce the next chapter in our journey: <strong><a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a></strong>. This new platform
             represents a significant evolution of our current offering, moving from a screenshot enhancement tool to a
             sophisticated text-based AI assistant platform that provides powerful language capabilities, real-time data
-            integration, and enhanced information retrieval.
+            integration, and enhanced information retrieval. You can access the platform at <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://snapenhanceai.vercel.app/</a>.
           </p>
 
           <div className="my-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
@@ -84,7 +84,7 @@ export default function SnapEnhanceAIPlatformPage() {
             <div className="bg-white p-4 rounded-md border border-border/30 shadow-sm">
               <h3 className="text-sm font-medium mb-2">Phase 3: SnapEnhance AI Platform</h3>
               <p className="text-xs text-muted-foreground">
-                Our new text-based AI assistant platform powered by advanced language models and real-time data integration.
+                Our new text-based AI assistant platform powered by advanced language models and real-time data integration. Available at <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">snapenhanceai.vercel.app</a>.
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function SnapEnhanceAIPlatformPage() {
             </p>
           </div>
 
-          <h2 className="text-lg font-medium mt-8 mb-4">Core Features of SnapEnhance AI</h2>
+          <h2 className="text-lg font-medium mt-8 mb-4">Core Features of <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a></h2>
 
           <h3 className="text-base font-medium mt-6 mb-2">1. Zero-Shot Function Calling</h3>
 
@@ -386,7 +386,7 @@ const routeQuery = (query, conversationHistory) => {
           <h2 className="text-lg font-medium mt-8 mb-4">Development Timeline</h2>
 
           <p>
-            SnapEnhance AI has been developed through an intensive, single-day development cycle on April 30, 2025, with multiple versions released in rapid succession:
+            <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> has been developed through an intensive, single-day development cycle on April 30, 2025, with multiple versions released in rapid succession:
           </p>
 
           <div className="my-6 p-4 bg-white rounded-lg border border-border/50 shadow-sm">
@@ -430,7 +430,7 @@ const routeQuery = (query, conversationHistory) => {
           <h3 className="text-base font-medium mt-6 mb-2">Foundation Releases</h3>
 
           <p>
-            The foundation of SnapEnhance AI was established with these versions released earlier in the day:
+            The foundation of <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> was established with these versions released earlier in the day:
           </p>
 
           <ul className="list-disc pl-5 space-y-1 mt-2">
@@ -454,7 +454,7 @@ const routeQuery = (query, conversationHistory) => {
           <h3 className="text-base font-medium mt-6 mb-2">What This Means for Users</h3>
 
           <p>
-            After our intensive development day on April 30, 2025, here's what you can experience with SnapEnhance AI:
+            After our intensive development day on April 30, 2025, here's what you can experience with <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a>:
           </p>
 
           <ul className="list-disc pl-5 space-y-1 mt-2">
@@ -478,7 +478,7 @@ const routeQuery = (query, conversationHistory) => {
           <h2 className="text-lg font-medium mt-8 mb-4">Our Commitment to Ethical AI</h2>
 
           <p>
-            As we continue to develop SnapEnhance AI, we remain firmly committed to our <Link href="/blog/ai-ethics" className="text-primary hover:underline">ethical AI principles</Link>.
+            As we continue to develop <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a>, we remain firmly committed to our <Link href="/blog/ai-ethics" className="text-primary hover:underline">ethical AI principles</Link>.
             Our platform prioritizes:
           </p>
 
@@ -503,14 +503,14 @@ const routeQuery = (query, conversationHistory) => {
           <div className="my-6 p-4 bg-blue-50 rounded-md border border-blue-100 shadow-sm">
             <h4 className="text-sm font-medium mb-2">GDPR and CCPA Compliance</h4>
             <p className="text-xs text-muted-foreground">
-              SnapEnhance AI is fully compliant with major privacy regulations including GDPR and CCPA. We've implemented
+              <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> is fully compliant with major privacy regulations including GDPR and CCPA. We've implemented
               comprehensive measures to ensure user data is handled responsibly, with clear consent mechanisms, data minimization
               practices, and transparent privacy policies. Our collaboration with Together AI for model hosting also ensures
               that all infrastructure meets the highest security and compliance standards.
             </p>
           </div>
 
-          <h2 className="text-lg font-medium mt-8 mb-4">Try SnapEnhance AI Today</h2>
+          <h2 className="text-lg font-medium mt-8 mb-4">Try <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SnapEnhance AI</a> Today</h2>
 
           <p>
             SnapEnhance AI represents an exciting new direction for our company, leveraging cutting-edge language models to
@@ -524,7 +524,7 @@ const routeQuery = (query, conversationHistory) => {
                 Experience the power of Llama 3.3 70B and DeepSeek R1 with our intuitive interface, real-time data integration, and advanced formatting.
               </p>
               <p className="text-xs text-primary mt-2">
-                <Link href="/ai" className="hover:underline">Launch SnapEnhance AI →</Link>
+                <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:underline">Launch SnapEnhance AI →</a>
               </p>
             </div>
 
@@ -534,7 +534,7 @@ const routeQuery = (query, conversationHistory) => {
                 Share your experience and suggestions to help us improve SnapEnhance AI. Your feedback directly influences our development priorities.
               </p>
               <p className="text-xs text-primary mt-2">
-                <Link href="/feedback" className="hover:underline">Submit feedback →</Link>
+                <a href="/feedback" className="hover:underline">Submit feedback →</a>
               </p>
             </div>
           </div>
@@ -542,7 +542,7 @@ const routeQuery = (query, conversationHistory) => {
           <p>
             We're incredibly excited about the capabilities that SnapEnhance AI offers and the value it can provide to users.
             By combining the power of advanced language models with real-time data integration and thoughtful interface design,
-            we've created an AI assistant that's both powerful and intuitive to use.
+            we've created an AI assistant that's both powerful and intuitive to use. Visit <a href="https://snapenhanceai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://snapenhanceai.vercel.app/</a> to experience it firsthand.
           </p>
 
           <p>

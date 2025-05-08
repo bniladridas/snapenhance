@@ -11,13 +11,27 @@ All notable changes to SnapEnhance will be documented in this file.
 - Updated all SnapEnhance AI platform links to point to https://snapenhanceai.vercel.app/
 - Enhanced AI/ML information page with more detailed SnapEnhance AI platform documentation
 
-## [1.5.0] - 2025-05-01
+## [1.5.0] - 2025-05-08
+
+### Enhanced
+
+- Improved real-time data prioritization for all API functions
+- Enhanced system prompts to ensure consistent use of real-time data
+- Better fallback mechanisms when API keys are missing
+
+### Fixed
+
+- Issue with function calling being triggered for simple greetings
+- Improved Wikipedia search with better error handling and retry logic
+
+### Updated
+
+- Response formatting to use plain text without emoji or markdown headings
 
 ### Added
 
-- Created detailed blog post explaining the new Quick Mode feature and performance improvements
-- Documented the technical implementation of optimized token limits and API timeouts
-- Updated blog index page with the new Quick Mode feature blog post
+- Created detailed blog post "SnapEnhance AI v1.5.0: Enhancing Real-Time Data Reliability"
+- Updated blog index page with the new v1.5.0 release blog post
 
 ## [1.4.4] - 2025-04-30
 

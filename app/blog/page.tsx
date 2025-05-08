@@ -8,6 +8,16 @@ export default function BlogPage() {
 
         <div className="mb-8 flex flex-col gap-4">
           <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
+            <a href="/blog/v1-5-0-release" className="block">
+              <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">SnapEnhance AI v1.5.0: Enhancing Real-Time Data Reliability</h2>
+              <p className="text-xs text-muted-foreground">Published: May 8, 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Learn about our latest update focusing on improved real-time data prioritization, better error handling, and refined response formatting for a more consistent user experience.
+              </p>
+            </a>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-border/30 hover:border-primary/30 transition-colors shadow-sm">
             <a href="/feedback" className="block">
               <h2 className="text-base font-medium mb-1 text-foreground hover:text-primary transition-colors">New Feedback Form for <span className="text-primary">SnapEnhance AI</span> Platform</h2>
               <p className="text-xs text-muted-foreground">Published: May 3, 2025</p>
@@ -394,7 +404,7 @@ export default function BlogPage() {
         </article>
 
         <div className="mt-12 pt-4 border-t border-border/20 text-xs text-muted-foreground/60 text-center">
-          <p>Last updated: May 3, 2025</p>
+          <p>Last updated: May 8, 2025</p>
         </div>
       </div>
     </div>
